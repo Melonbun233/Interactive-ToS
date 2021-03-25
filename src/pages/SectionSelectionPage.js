@@ -2,7 +2,7 @@
 import React from 'react';
 import 'fontsource-roboto';
 
-import { Container, Box, Typography, Grid, Button } from '@material-ui/core';
+import { Box, Typography, Grid, Button } from '@material-ui/core';
 
 import pages from '../pages';
 import useStyles from '../style';
@@ -30,7 +30,7 @@ const SectionSelectionPage = (props) => {
                 variant='contained'
                 color='primary'
                 className={classes.button}
-                onClick={null}>
+                onClick={() => props.goto(pages['SectionPage'], value)}>
                 Section {value}
               </Button>
             </Grid>

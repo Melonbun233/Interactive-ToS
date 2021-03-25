@@ -2,8 +2,9 @@
 import React from 'react';
 import 'fontsource-roboto';
 
-import { Container, Box, Typography, Grid, Button } from '@material-ui/core';
+import { Box, Typography, Button } from '@material-ui/core';
 
+import pages from '../pages';
 import useStyles from '../style';
 
 let CompletePage = (props) => {
@@ -28,7 +29,7 @@ let CompletePage = (props) => {
           variant='contained'
           color='primary'
           className={classes.button}
-          onClick={null}>
+          // onClick={() => props.goto(pages['LandingPage'])}>
           Download
         </Button>
       </Box>

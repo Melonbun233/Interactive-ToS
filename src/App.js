@@ -16,6 +16,7 @@ export default class App extends React.Component{
     this.state = {
       currentPage:pages['LandingPage'],
       shouldBlockTransition:false,
+      sectionIndex:0,
     }
 
     this.goto = this.goto.bind(this);
@@ -33,13 +34,14 @@ export default class App extends React.Component{
     }
   }
 
-  goto(page) {
-    let shouldBlockTransition = 
-      (page != pages['LandingPage'] || page != pages['CompletePage']);
+  // extra value is used when the destination is SectionPage
+  goto(page, value) {
+    let shouldBlockTransition = page != pages['LandingPage'];
 
     this.setState({
       currentPage:page,
-      shouldBlockTransition
+      shouldBlockTransition,
+      sectionIndex: value,
     });
 
     console.log('goto page ' + page);
@@ -54,7 +56,7 @@ export default class App extends React.Component{
         return <SectionSelectionPage goto={this.goto}/>;
         
       case pages['SectionPage']:
-        return <SectionPage goto={this.goto}/>;
+        return <SectionPage goto={this.goto} value={this.state.sectionIndex}/>;
 
       case pages['CompletePage']:
         return <CompletePage goto={this.goto}/>;
