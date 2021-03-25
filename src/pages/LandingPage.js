@@ -11,7 +11,7 @@ const LandingPage = (props) => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth='lg' className={classes.content}>
+    <Box bgcolor='background.default' height='100vh' className={classes.content}>
       <Box>
         <div className={classes.title}>
           <Typography variant='h2'>Interactive Term of Service</Typography>
@@ -22,16 +22,16 @@ const LandingPage = (props) => {
           <Typography variant='subtitle2'>read and understand ToS</Typography>
         </div>
       </Box>
-        <Button
-          variant='contained'
-          color='primary'
-          className={classes.button}
-          endIcon={<ChevronRightIcon/>}
-          onClick={() => props.goto(pages['SectionSelectionPage'])}
-        >
-          Try It Out
-        </Button>
-    </Container>
+      <Button
+        variant='contained'
+        color='primary'
+        className={classes.button}
+        endIcon={<ChevronRightIcon/>}
+        onClick={() => props.goto(pages['SectionSelectionPage'])}
+      >
+        Try It Out
+      </Button>
+    </Box>
   );
 
 }

@@ -34,7 +34,8 @@ export default class App extends React.Component{
   }
 
   goto(page) {
-    let shouldBlockTransition = (page != pages['LandingPage'] || page != pages['CompletePage']);
+    let shouldBlockTransition = 
+      (page != pages['LandingPage'] || page != pages['CompletePage']);
 
     this.setState({
       currentPage:page,
