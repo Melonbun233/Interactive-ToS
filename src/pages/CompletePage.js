@@ -29,7 +29,7 @@ let CompletePage = (props) => {
           variant='contained'
           color='primary'
           className={classes.button}
-          // onClick={() => props.goto(pages['LandingPage'])}>
+          onClick={null}>
           Download
         </Button>
       </Box>
