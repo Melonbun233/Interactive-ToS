@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   title: {
-    margin: theme.spacing(10, 0, 2, 0),
+    margin: theme.spacing(2, 0, 2, 0),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-  },
+  }
 }));
 
 export default useStyles;

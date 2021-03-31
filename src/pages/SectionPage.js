@@ -2,11 +2,13 @@
 // to be used with different sections
 import React from 'react';
 import 'fontsource-roboto';
+import GameApp from '../components/GameApp';
 
 import { Box, Typography, Grid, Button } from '@material-ui/core';
 
 import pages from '../pages';
 import useStyles from '../style';
+
 
 const SectionPage = (props) => {
 
@@ -16,9 +18,10 @@ const SectionPage = (props) => {
     <Box bgcolor='background.default' height='100vh' className={classes.content}>
       <Box>
         <div className={classes.title}>
-          <Typography variant='h2'>Section {props.value}</Typography>
+          <Typography variant='h4'>Section {props.value}</Typography>
         </div>
       </Box>
+      <GameApp section={props.value} goto={props.goto}/>
       <Button 
         variant='contained'
         color='primary'

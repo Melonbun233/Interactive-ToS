@@ -25,7 +25,7 @@ let CompletePage = (props) => {
         <Typography variant='body1' align='center'>
           Please click the Download button to download your report
         </Typography>
-        <Button
+        <Button>
           variant='contained'
           color='primary'
           className={classes.button}
