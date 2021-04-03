@@ -21,7 +21,9 @@ const data = {
     {
       name: "Section1",
       introductions: [ // intro
-
+        'Hello! Welcom to the section 1 of Interactive ToS test. I am your asistant to provide you some important information about this test, and will guide you through the whole section.',
+        'Recently, a lot of officers has reported many users of our product posted inappropriate content. You will be acting as a detector who is trying to find the evidences that users violating the rules with my help. I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules.',
+        'The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules".',
       ], 
       pages: [ // start of pages arrays
         {

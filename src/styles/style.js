@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems:'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   narrationFeedback: {
     width: '100%',
@@ -46,7 +46,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
+  narration: {
+    width: '90%',
+    height:'90%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems:'flex-start',
+    justifyContent: 'space-between',
+  },
 }));
 
 export default useStyles;
