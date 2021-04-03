@@ -24,14 +24,14 @@ const Narration = (props) => {
 
 
   return (
-    <Box borderTop={1} className={classes.narrationArea}>
+    <Box borderTop={2} className={classes.narrationArea}>
       {itemSelected ? 
-        <Box padding={1}> 
+        <Box padding={2} className={classes.narration}> 
           <Box textAlign='center'>
             <Typography variant='h5'>{itemData.narration}</Typography>
           </Box>
           {confirmed ? 
-            <Box padding={1} className={classes.narrationFeedback} textAlign='center'>
+            <Box padding={2} className={classes.narrationFeedback} textAlign='center'>
               <Typography variant='body1'>{itemData.response}</Typography>
               {itemData.violatingRules ?
                 <Box > 
@@ -59,27 +59,30 @@ const Narration = (props) => {
               }
             </Box> : 
 
-            <Box className={classes.narrationFeedback} textAlign='center'>
-              <Button 
-                className={classes.button}
-                variant='contained'
-                onClick={confirmButtonClicked}
-                color='primary'
-                fullWidth
-              >Yes, it's violating the rules</Button>
-              <Button 
-                className={classes.button}
-                variant='contained'
-                onClick={onCancelItemSelected}
-                fullWidth
-              >
-                I would like to select another one
-              </Button>
+            <Box className={classes.narrationFeedback}>
+              <Box width='30%'>
+                <Button 
+                  className={classes.button}
+                  variant='contained'
+                  onClick={confirmButtonClicked}
+                  color='primary'
+                  fullWidth
+                >Yes, it's violating the rules</Button>
+                <Button 
+                  className={classes.button}
+                  variant='contained'
+                  onClick={onCancelItemSelected}
+                  fullWidth
+                >
+                  No, I'd Like To Choose Another One
+                </Button>
+              </Box>
+              
             </Box>
           }
         </Box> :
 
-        <Box padding={1}> 
+        <Box padding={2}> 
           <Box textAlign='center'>
             <Typography variant='h5'>{pageData.description}</Typography>
           </Box>

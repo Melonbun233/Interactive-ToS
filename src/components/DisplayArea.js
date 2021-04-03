@@ -5,6 +5,9 @@ import data from '../data';
 import Narration from './Narration';
 import Introduction from './Introduction';
 
+// all section displays
+import SectionDisplay1 from './SectionDisplay1';
+
 const DisplayAera = (props) => {
   const [currPageIndex, setCurrPageIndex] = useState(0);
   const [currItemIndex, setCurrItemIndex] = useState(0);
@@ -21,7 +24,6 @@ const DisplayAera = (props) => {
     if (pageData.items[currItemIndex].violatingRules) {
       setCurrPageIndex(currPageIndex + 1);
     }
-    
     setItemSelected(false);
   }
 
@@ -38,35 +40,20 @@ const DisplayAera = (props) => {
     setIsIntroduction(false);
   }
 
+  const displayMap = {
+    0: <SectionDisplay1 values={{
+      onItemSelected,
+      isIntroduction,
+      itemSelected
+    }}/>,
+  }
+
   return (
     <Box className={classes.displayArea}> 
-      <Box className={classes.content}>
-        <h4>Page: {currPageIndex + 1}/{pages.length}</h4>
-        <Button 
-          onClick={() => onItemSelected(0)}
-          disabled={itemSelected || isIntroduction}
-        > 
-          the item 1
-        </Button>
-        <Button 
-          onClick={() => onItemSelected(1)}
-          disabled={itemSelected || isIntroduction}
-        > 
-          the item 2
-        </Button>
-        <Button 
-          onClick={() => onItemSelected(2)}
-          disabled={itemSelected || isIntroduction}
-        > 
-          the item 3
-        </Button>
-        <Button 
-          onClick={() => onItemSelected(3)}
-          disabled={itemSelected || isIntroduction}
-        > 
-          the item 4
-        </Button>
-      </Box>
+      <h4>Page: {currPageIndex + 1}/{pages.length}</h4>
+
+      {displayMap[section]}
+
       {isIntroduction ? 
         <Introduction values={{
           onIntroductionEnded,
