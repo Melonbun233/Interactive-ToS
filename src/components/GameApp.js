@@ -36,7 +36,7 @@ class GameApp extends React.Component{
             <div>
                 <Box border={1} width='100%'>
                     <DisplayArea 
-                      section={this.props.section - 1} // pass the section index
+                      sectionIndex={this.props.section - 1} // pass the section index
                     />
                 </Box>
             </div>

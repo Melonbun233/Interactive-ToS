@@ -6,7 +6,7 @@ import Narration from './Narration';
 import Introduction from './Introduction';
 
 // all section displays
-import SectionDisplay1 from './SectionDisplay1';
+import DisplayAreaUI1 from './DisplayAreaUI1';
 
 const DisplayAera = (props) => {
   const [currPageIndex, setCurrPageIndex] = useState(0);
@@ -15,8 +15,8 @@ const DisplayAera = (props) => {
   const [isIntroduction, setIsIntroduction] = useState(true);
   const classes = useStyles();
 
-  const {section} = props;
-  const sectionData = data.sections[section];
+  const { sectionIndex } = props;
+  const sectionData = data.sections[sectionIndex];
   const { name, introductions, pages} = sectionData;
   const pageData = pages[currPageIndex];
   
@@ -41,7 +41,7 @@ const DisplayAera = (props) => {
   }
 
   const displayMap = {
-    0: <SectionDisplay1 values={{
+    0: <DisplayAreaUI1 values={{
       onItemSelected,
       isIntroduction,
       itemSelected
@@ -52,7 +52,7 @@ const DisplayAera = (props) => {
     <Box className={classes.displayArea}> 
       <h4>Page: {currPageIndex + 1}/{pages.length}</h4>
 
-      {displayMap[section]}
+      {displayMap[sectionIndex]}
 
       {isIntroduction ? 
         <Introduction values={{

@@ -1,7 +1,7 @@
 import { Box, Button } from '@material-ui/core';
 import useStyles from '../styles/style';
 
-const SectionDisplay1 = (props) => {
+const DisplayAreaUI1 = (props) => {
   const classes = useStyles();
   const { onItemSelected, isIntroduction, itemSelected} = props.values;
 
@@ -35,4 +35,4 @@ const SectionDisplay1 = (props) => {
   );
 }
 
-export default SectionDisplay1;
+export default DisplayAreaUI1;
