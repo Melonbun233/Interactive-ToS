@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   displayArea: {
     width: '100%',
-    height: '650px',
+    height: '700px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -34,7 +34,18 @@ const useStyles = makeStyles((theme) => ({
   },
   narrationArea: {
     width: '100%',
-    height: '150px',
+    height: '200px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems:'center',
+    justifyContent: 'center',
+  },
+  narrationFeedback: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 }));
 

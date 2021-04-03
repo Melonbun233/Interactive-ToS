@@ -9,7 +9,8 @@ const Narration = (props) => {
   const classes = useStyles();
   const [confirmed, setConfirmed] = useState(false);
 
-  const {pageData, currItemIndex, itemSelected, onCompleteNarration} = props.values;
+  const {pageData, currItemIndex, itemSelected, onCompleteNarration, 
+    onCancelItemSelected} = props.values;
   const itemData = pageData.items[currItemIndex];
 
   let confirmButtonClicked = () => {
@@ -26,21 +27,30 @@ const Narration = (props) => {
     <Box borderTop={1} className={classes.narrationArea}>
       {itemSelected ? 
         <Box padding={1}> 
-          <Typography variant='h5'>{itemData.narration}</Typography>
+          <Box textAlign='center'>
+            <Typography variant='h5'>{itemData.narration}</Typography>
+          </Box>
           {confirmed ? 
-            <Box padding={1}>
+            <Box padding={1} className={classes.narrationFeedback} textAlign='center'>
               <Typography variant='body1'>{itemData.response}</Typography>
               {itemData.violatingRules ?
-                <Button 
-                  variant='contained'
-                  onClick={completeButtonClicked}>
-                  Go to Next Page
-                </Button> : 
-                <Box> 
-                  <Typography variant='body1'>Please choose another one.</Typography>
-                  <Button
+                <Box > 
+                  <Button 
+                    className={classes.button}
                     variant='contained'
                     onClick={completeButtonClicked}
+                    color='primary'
+                  >
+                    Go to Next Page
+                  </Button>
+                </Box> : 
+                <Box> 
+                  <Typography variant='body1'>Please choose another one.</Typography>
+                  <Button 
+                    className={classes.button}
+                    variant='contained'
+                    onClick={completeButtonClicked}
+                    color='primary'
                   >
                     Back
                   </Button>
@@ -49,15 +59,30 @@ const Narration = (props) => {
               }
             </Box> : 
 
-            <Button 
-              variant='contained'
-              onClick={confirmButtonClicked}
-            >Yes, it's violating the rules</Button>
+            <Box className={classes.narrationFeedback} textAlign='center'>
+              <Button 
+                className={classes.button}
+                variant='contained'
+                onClick={confirmButtonClicked}
+                color='primary'
+                fullWidth
+              >Yes, it's violating the rules</Button>
+              <Button 
+                className={classes.button}
+                variant='contained'
+                onClick={onCancelItemSelected}
+                fullWidth
+              >
+                I would like to select another one
+              </Button>
+            </Box>
           }
         </Box> :
 
-        <Box padding={1}>
-          <Typography variant='h5'>{pageData.description}</Typography>
+        <Box padding={1}> 
+          <Box textAlign='center'>
+            <Typography variant='h5'>{pageData.description}</Typography>
+          </Box>
         </Box>
       }
     </Box>

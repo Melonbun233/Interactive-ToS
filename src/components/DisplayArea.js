@@ -23,6 +23,10 @@ const DisplayAera = (props) => {
     setItemSelected(false);
   }
 
+  let onCancelItemSelected = () => {
+    setItemSelected(false);
+  }
+
   let onItemSelected = (itemIndex) => {
     setItemSelected(true);
     setCurrItemIndex(itemIndex);
@@ -34,21 +38,25 @@ const DisplayAera = (props) => {
         <h4>Page: {currPageIndex + 1}/{pages.length}</h4>
         <Button 
           onClick={() => onItemSelected(0)}
+          disabled={itemSelected}
         > 
           the item 1
         </Button>
         <Button 
           onClick={() => onItemSelected(1)}
+          disabled={itemSelected}
         > 
           the item 2
         </Button>
         <Button 
           onClick={() => onItemSelected(2)}
+          disabled={itemSelected}
         > 
           the item 3
         </Button>
         <Button 
           onClick={() => onItemSelected(3)}
+          disabled={itemSelected}
         > 
           the item 4
         </Button>
@@ -58,6 +66,7 @@ const DisplayAera = (props) => {
         currItemIndex,
         itemSelected,
         onCompleteNarration,
+        onCancelItemSelected,
       }} />    
     </Box>
   )
