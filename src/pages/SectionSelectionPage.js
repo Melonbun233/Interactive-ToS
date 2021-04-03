@@ -5,7 +5,7 @@ import 'fontsource-roboto';
 import { Box, Typography, Grid, Button } from '@material-ui/core';
 
 import pages from '../pages';
-import useStyles from '../style';
+import useStyles from '../styles/style';
 
 const SectionSelectionPage = (props) => {
   const classes = useStyles();

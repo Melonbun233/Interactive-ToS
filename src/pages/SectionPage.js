@@ -7,7 +7,7 @@ import GameApp from '../components/GameApp';
 import { Box, Typography, Grid, Button } from '@material-ui/core';
 
 import pages from '../pages';
-import useStyles from '../style';
+import useStyles from '../styles/style';
 
 
 const SectionPage = (props) => {
@@ -21,7 +21,9 @@ const SectionPage = (props) => {
           <Typography variant='h4'>Section {props.value}</Typography>
         </div>
       </Box>
-      <GameApp section={props.value} goto={props.goto}/>
+      <Box width='100%'>
+        <GameApp section={props.value} goto={props.goto}/>
+      </Box>
       <Button 
         variant='contained'
         color='primary'

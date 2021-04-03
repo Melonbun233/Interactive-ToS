@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core';
 
-import theme from './theme';
+import theme from './styles/theme';
 
 import LandingPage from './pages/LandingPage';
 import SectionSelectionPage from './pages/SectionSelectionPage';

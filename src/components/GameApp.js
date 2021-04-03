@@ -34,27 +34,15 @@ class GameApp extends React.Component{
 
         return (
             <div>
-                <Box border={1} justifyContent="center" display="flex" height={400} width={1000}>
+                <Box border={1} width='100%'>
                     <DisplayArea 
-                     page={this.state.page}
-                     maxPage = {maxPage}
-                     updateItem={this.updateItem}/>
-                </Box>
-                <Box border={1} justifyContent="center" display="flex" height={160} width={1000}>
-                    <Narration 
-                    page={this.state.page} 
-                    item={this.state.item} 
-                    stage={this.state.stage}
-                    isDefault={this.state.isDefault} 
-                    maxPage = {maxPage} 
-                    goto = {this.props.goto}
-                    updatePage = {this.updatePage} 
-                    nextStage = {this.nextStage} />
+                      section={this.props.section - 1}
+                    />
                 </Box>
             </div>
         )
-
     }
+
     updatePage=()=>{
         const iPage = this.state.page
         this.setState({

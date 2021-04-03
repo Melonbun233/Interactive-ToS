@@ -23,6 +23,18 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
+  },
+  displayArea: {
+    width: '100%',
+    height: '650px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  narrationArea: {
+    width: '100%',
+    height: '150px',
   }
 }));
 

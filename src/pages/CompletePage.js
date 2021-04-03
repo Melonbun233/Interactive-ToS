@@ -5,7 +5,7 @@ import 'fontsource-roboto';
 import { Box, Typography, Button } from '@material-ui/core';
 
 import pages from '../pages';
-import useStyles from '../style';
+import useStyles from '../styles/style';
 
 let CompletePage = (props) => {
   const classes = useStyles();
@@ -29,7 +29,7 @@ let CompletePage = (props) => {
           variant='contained'
           color='primary'
           className={classes.button}
-          onClick={null}>
+          onClick={null}
           Download
         </Button>
       </Box>

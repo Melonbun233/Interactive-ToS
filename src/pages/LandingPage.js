@@ -3,7 +3,7 @@ import { Button, Container, Typography, Box } from '@material-ui/core';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import React from 'react';
 import 'fontsource-roboto';
-import useStyles from '../style';
+import useStyles from '../styles/style';
 import pages from '../pages';
 
 const LandingPage = (props) => {
@@ -12,7 +12,7 @@ const LandingPage = (props) => {
 
   return (
     <Box bgcolor='background.default' height='100vh' className={classes.content}>
-      <Box>
+      <Box pt={20}>
         <div className={classes.title}>
           <Typography variant='h2'>Interactive Term of Service</Typography>
           <Typography variant='h3'>CPEN 541 Project</Typography>

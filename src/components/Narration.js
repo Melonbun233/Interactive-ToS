@@ -1,79 +1,67 @@
-import React from 'react';
+import React, { useState, } from 'react';
 import data from '../data.json';
 import { Box, Typography, Grid, Button } from '@material-ui/core';
 import pages from '../pages';
+import useStyles from '../styles/style';
 
 
-class Narration extends React.Component{
-    constructor(props){
-        super(props)
+const Narration = (props) => {
+  const classes = useStyles();
+  const [confirmed, setConfirmed] = useState(false);
 
-    }
+  const {pageData, currItemIndex, itemSelected, onCompleteNarration} = props.values;
+  const itemData = pageData.items[currItemIndex];
 
-    render(){
-        let str = null;
-        let response = null;
-        let isviolatingRules = false;
-        let showElements = !this.props.isDefault;
-        let stage = this.props.stage
-        let page = this.props.page
-        let maxPage = this.props.maxPage
-        if(this.props.isDefault){
-            str = data.pages[this.props.page].description;
-        }else{
-            str = data.pages[this.props.page].items[this.props.item].narration;
-            response = data.pages[this.props.page].items[this.props.item].response;
-            isviolatingRules = data.pages[this.props.page].items[this.props.item].violatingRules
-        }
+  let confirmButtonClicked = () => {
+    setConfirmed(true);
+  }
+
+  let completeButtonClicked = () => {
+    setConfirmed(false);
+    onCompleteNarration();
+  }
 
 
-
-
-        return (
-            <Box justifyContent="center">
-                <Box display={stage == 0?'block' : 'none'}>
-                    <h4>should be some description</h4>
-                    <h4>{str}</h4>
-                    <Box display={showElements?'block' : 'none'}>
-                        <Button 
-                            variant='contained' 
-                            color='primary' 
-                            onClick={()=>{this.props.nextStage()}}>
-                            This behavior violates the rule
-                        </Button> 
-                    </Box>
+  return (
+    <Box borderTop={1} className={classes.narrationArea}>
+      {itemSelected ? 
+        <Box padding={1}> 
+          <Typography variant='h5'>{itemData.narration}</Typography>
+          {confirmed ? 
+            <Box padding={1}>
+              <Typography variant='body1'>{itemData.response}</Typography>
+              {itemData.violatingRules ?
+                <Button 
+                  variant='contained'
+                  onClick={completeButtonClicked}>
+                  Go to Next Page
+                </Button> : 
+                <Box> 
+                  <Typography variant='body1'>Please choose another one.</Typography>
+                  <Button
+                    variant='contained'
+                    onClick={completeButtonClicked}
+                  >
+                    Back
+                  </Button>
                 </Box>
-                <Box display={stage == 1?'block' : 'none'}> 
-                    <h4>{response}</h4>
-                    <Box display={isviolatingRules & (page+1<maxPage)?'block' : 'none'}>
-                        <Button 
-                            variant='contained' 
-                            color='primary' 
-                            onClick={()=>{this.props.updatePage()}}>
-                            Go to next Page
-                        </Button> 
-                    </Box>
-                    <Box display={isviolatingRules & (page+1==maxPage)?'block' : 'none'}>
-                        <Button 
-                            variant='contained' 
-                            color='primary' 
-                            onClick={() => this.props.goto(pages['SectionSelectionPage'])}>
-                            Finish this section
-                        </Button> 
-                    </Box>
-                </Box>
-            </Box>
-            
-        )
-    }
+                
+              }
+            </Box> : 
 
+            <Button 
+              variant='contained'
+              onClick={confirmButtonClicked}
+            >Yes, it's violating the rules</Button>
+          }
+        </Box> :
 
-    // nextStage=()=>{
-    //     const showResponse = this.state.showResponse
-    //     this.setState({showResponse: !showResponse})
-    // }
-
-
+        <Box padding={1}>
+          <Typography variant='h5'>{pageData.description}</Typography>
+        </Box>
+      }
+    </Box>
+  );
 }
 
 export default Narration;
