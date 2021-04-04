@@ -53,7 +53,7 @@ const data = {
           ],
         },
         {
-          description: "Our company's purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely. Please find the evidence that the user violated this rule.",
+          description: "There is no place here for violent organizations, including terrorist organizations, violent extremist groups, or individuals who affiliate with and promote their illicit activities. The violence that these groups engage in and/or promote jeopardizes the physical safety and well-being of those targeted. Please find the evidence that the user violated this rule.",
           items: [ // start of items array
             {
               narration: "This post seems to be posted by a terrorism organization, does it violate the rule?",
@@ -80,7 +80,7 @@ const data = {
           ],
         },
         {
-          description: "Our company's purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely. Please find the evidence that the user violated this rule.",
+          description: "We have zero tolerance towards any material that features or promotes child sexual exploitation, one of the most serious violations of the rules. This may include media, text, illustrated, or computer-generated images. Regardless of the intent, viewing, sharing, or linking to child sexual exploitation material contributes to the re-victimization of the depicted children. Please find the evidence that the user violated this rule.",
           items: [  // start of items array
             {
               narration: "This post shouldn't be allowed! We have a zero-tolerance child sexual exploitation policy here, and this post definitely violets the rule!",
@@ -93,7 +93,7 @@ const data = {
               violatingRules: false
             },
             {
-              narration: "This item looks good",
+              narration: "This post looks good, does it voilate the rule?",
               response: "This post does not violate the rule.",
               violatingRules: false
             },

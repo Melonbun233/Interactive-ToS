@@ -64,7 +64,10 @@ const DisplayAera = (props) => {
 
   return (
     <Box className={classes.displayArea}> 
-      <h4>Page: {currPageIndex + 1}/{pages.length}</h4>
+      <Box textAlign='end' width='90%'>
+        <Typography variant='body1'>Page: {currPageIndex + 1}/{pages.length}</Typography>
+      </Box>
+      
 
       {UIMap[sectionIndex][currPageIndex]}
 
