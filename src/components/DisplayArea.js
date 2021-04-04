@@ -6,13 +6,16 @@ import Narration from './Narration';
 import Introduction from './Introduction';
 
 // all section displays
-import DisplayAreaUI1 from './DisplayAreaUI1';
+import UI_S1P1 from './PageUI/UI_S1P1';
+import UI_S1P2 from './PageUI/UI_S1P2';
+import UI_S1P3 from './PageUI/UI_S1P3';
 
 const DisplayAera = (props) => {
   const [currPageIndex, setCurrPageIndex] = useState(0);
   const [currItemIndex, setCurrItemIndex] = useState(0);
   const [itemSelected, setItemSelected] = useState(false);
   const [isIntroduction, setIsIntroduction] = useState(true);
+  const [shouldEndSection, setShouldEndSection] = useState(false);
   const classes = useStyles();
 
   const { sectionIndex } = props;
@@ -21,6 +24,12 @@ const DisplayAera = (props) => {
   const pageData = pages[currPageIndex];
   
   let onCompleteNarration = () => {
+    // check if this is the last page and exit if true
+    if (currPageIndex == pages.length - 1) {
+      setShouldEndSection(true);
+      // TODO: callback here to end section
+    }
+
     if (pageData.items[currItemIndex].violatingRules) {
       setCurrPageIndex(currPageIndex + 1);
     }
@@ -40,19 +49,24 @@ const DisplayAera = (props) => {
     setIsIntroduction(false);
   }
 
-  const displayMap = {
-    0: <DisplayAreaUI1 values={{
-      onItemSelected,
-      isIntroduction,
-      itemSelected
-    }}/>,
-  }
+  const UIMap = [
+    // section 1
+    [
+      <UI_S1P1 values = {{onItemSelected, isIntroduction, itemSelected}} />, // page 1
+      <UI_S1P2 values = {{onItemSelected, isIntroduction, itemSelected}} />, // page 2
+      <UI_S1P3 values = {{onItemSelected, isIntroduction, itemSelected}} />, // page 3
+    ],
+    // section 2
+    [
+
+    ],
+  ];
 
   return (
     <Box className={classes.displayArea}> 
       <h4>Page: {currPageIndex + 1}/{pages.length}</h4>
 
-      {displayMap[sectionIndex]}
+      {UIMap[sectionIndex][currPageIndex]}
 
       {isIntroduction ? 
         <Introduction values={{

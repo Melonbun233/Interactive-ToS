@@ -19,8 +19,9 @@ const Introduction = (props) => {
       {introductionEnded ? 
         <Box padding={2} className={classes.narration}> 
           <Box>
-            <Typography variant='h5'>I hope you have a great time!</Typography>
+            <Typography variant='h5'>Introduction</Typography>
           </Box>
+          <Typography variant='body1'>I hope you have a great time!</Typography>
           <Box width='100%' textAlign='end' >
             <Button 
               className={classes.button}

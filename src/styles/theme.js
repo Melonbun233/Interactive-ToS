@@ -22,6 +22,9 @@ const theme = createMuiTheme({
     h3: {
       color: '#2699FB'
     }, 
+    button: {
+      textTransform: 'none',
+    },
   }
 });
 
