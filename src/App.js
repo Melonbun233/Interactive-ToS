@@ -23,8 +23,9 @@ export default class App extends React.Component{
           hasViewed: false,
           hasAgreed: false,
           lastPageIndex: 0,
-          startTime: " ",
-          endTime: " ",
+          startTime: 0,
+          endTime: 0,
+          totalTime: 0,
           isInteractive: false,
           truePositiveNum: 0,
           falsePositiveNum: 0
@@ -34,8 +35,9 @@ export default class App extends React.Component{
           hasViewed: false,
           hasAgreed: false,
           lastPageIndex: 0,
-          startTime: " ",
-          endTime: " ",
+          startTime: 0,
+          endTime: 0,
+          totalTime: 0,
           isInteractive: false,
           truePositiveNum: 0,
           falsePositiveNum: 0
@@ -53,7 +55,7 @@ export default class App extends React.Component{
   setStartTime=(sectionIndex)=>{
     sectionIndex--;
     const userdata = [...this.state.userdata];
-    const currentTime = new Date().toLocaleTimeString();
+    const currentTime = new Date().getTime();
     console.log("section", sectionIndex)
     console.log("StartTime" , currentTime)
     this.setState({
@@ -66,11 +68,14 @@ export default class App extends React.Component{
   setEndTime=(sectionIndex)=>{
     sectionIndex--;
     const userdata = [...this.state.userdata];
-    const currentTime = new Date().toLocaleTimeString();
+    const currentTime = new Date().getTime();
+    const startTime = this.state.userdata[sectionIndex].startTime;
+    const totalTime = (currentTime - startTime) / 1000;
     console.log("section", sectionIndex)
     console.log("EndTime" , currentTime)
+    console.log("TotalTime" , totalTime)
     this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, endTime: currentTime} : item),
+      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, endTime: currentTime, totalTime: totalTime} : item),
     }
     )
   }
@@ -79,7 +84,8 @@ export default class App extends React.Component{
   setHasViewed=(sectionIndex)=>{
     sectionIndex--;
     const userdata = [...this.state.userdata];
-
+    console.log("section", sectionIndex)
+    console.log("hasViewed", this.state.userdata[sectionIndex].hasViewed)
     this.setState({
       userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, hasViewed: true} : item),
     }
@@ -123,9 +129,11 @@ export default class App extends React.Component{
   updateTrueNum=(sectionIndex)=>{
     sectionIndex--;
     const userdata = [...this.state.userdata];
-    const truePositiveNum = this.state.sectionIndex[sectionIndex].truePositiveNum;
+    const truePositiveNum = this.state.userdata[sectionIndex].truePositiveNum;
+    console.log("section", sectionIndex)
+    console.log("truePositiveNum", truePositiveNum)
     this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, truePositiveNum: truePositiveNum} : item),
+      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, truePositiveNum: truePositiveNum + 1} : item),
     }
     )
   }
@@ -134,13 +142,16 @@ export default class App extends React.Component{
   updateFalseNum=(sectionIndex)=>{
     sectionIndex--;
     const userdata = [...this.state.userdata];
-    const falsePositiveNum = this.state.sectionIndex[sectionIndex].falsePositiveNum;
+    const falsePositiveNum = this.state.userdata[sectionIndex].falsePositiveNum;
     this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, falsePositiveNum: falsePositiveNum} : item),
+      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, falsePositiveNum: falsePositiveNum + 1} : item),
     }
     )
   }
 
+  downclick=(e)=>{
+    e.stopPropagation();
+  }
 
   componentDidMount() {
     // prevent users from refreshing and back when they are testing
@@ -170,7 +181,7 @@ export default class App extends React.Component{
   renderSwitch() {
     switch (this.state.currentPage) {
       case pages['LandingPage']:
-        return <LandingPage goto={this.goto}/>;
+        return <LandingPage goto={this.goto} />;
     
       case pages['SectionSelectionPage']:
         return <SectionSelectionPage goto={this.goto} />;
@@ -187,7 +198,7 @@ export default class App extends React.Component{
             setIsInteractive={this.setIsInteractive} userdata = {this.state.userdata}/>;
 
       case pages['CompletePage']:
-        return <CompletePage goto={this.goto}/>;
+        return <CompletePage goto={this.goto} userdata={this.state.userdata} downclick={this.downclick}/>;
 
       default:
         return <h1> Invalid Page Index</h1>

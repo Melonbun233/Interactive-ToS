@@ -7,6 +7,19 @@ import { Box, Typography, Button } from '@material-ui/core';
 import pages from '../pages';
 import useStyles from '../styles/style';
 
+
+function downloadJson (data) {
+  const download = document.createElement('a') // element a
+  const blob = new Blob([JSON.stringify(data)], {
+    type: 'application/json'
+  })
+  const url = URL.createObjectURL(blob) // blob to url
+  download.href = url
+  download.download = 'userdata.json' //
+  //download.click()
+  return(download.click()); // trigger download event
+}
+
 let CompletePage = (props) => {
   const classes = useStyles();
 
@@ -25,12 +38,11 @@ let CompletePage = (props) => {
         <Typography variant='body1' align='center'>
           Please click the Download button to download your report
         </Typography>
-        <Button>
-          variant='contained'
+        <Button variant='contained'
           color='primary'
           className={classes.button}
-          onClick={null}
-          Download
+          onClick={downloadJson(props.userdata)}>
+          Button
         </Button>
       </Box>
       
