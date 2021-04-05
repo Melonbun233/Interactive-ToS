@@ -8,17 +8,17 @@ import pages from '../pages';
 import useStyles from '../styles/style';
 
 
-function downloadJson (data) {
-  const download = document.createElement('a') // element a
-  const blob = new Blob([JSON.stringify(data)], {
-    type: 'application/json'
-  })
-  const url = URL.createObjectURL(blob) // blob to url
-  download.href = url
-  download.download = 'userdata.json' //
-  //download.click()
-  return(download.click()); // trigger download event
-}
+// function downloadJson (data) {
+//   const download = document.createElement('a') // element a
+//   const blob = new Blob([JSON.stringify(data)], {
+//     type: 'application/json'
+//   })
+//   const url = URL.createObjectURL(blob) // blob to url
+//   download.href = url
+//   download.download = 'userdata.json' //
+//   //download.click()
+//   return(download.click()); // trigger download event
+// }
 
 let CompletePage = (props) => {
   const classes = useStyles();
@@ -41,7 +41,7 @@ let CompletePage = (props) => {
         <Button variant='contained'
           color='primary'
           className={classes.button}
-          onClick={downloadJson(props.userdata)}>
+          onClick={() => props.goto(pages['DownloadPage'])}>
           Button
         </Button>
       </Box>

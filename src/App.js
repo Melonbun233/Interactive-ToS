@@ -9,6 +9,7 @@ import SectionPage from './pages/SectionPage';
 import CompletePage from './pages/CompletePage';
 
 import pages from './pages';
+import DownloadPage from './pages/DownloadPage';
 
 export default class App extends React.Component{
   constructor(props) {
@@ -198,7 +199,10 @@ export default class App extends React.Component{
             setIsInteractive={this.setIsInteractive} userdata = {this.state.userdata}/>;
 
       case pages['CompletePage']:
-        return <CompletePage goto={this.goto} userdata={this.state.userdata} downclick={this.downclick}/>;
+        return <CompletePage goto={this.goto}/>;
+
+      case pages['DownloadPage']:
+        return <DownloadPage userdata={this.state.userdata}/>
 
       default:
         return <h1> Invalid Page Index</h1>
