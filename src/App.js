@@ -195,7 +195,8 @@ export default class App extends React.Component{
             setPageIndex={this.setPageIndex}
             setHasAgreed={this.setHasAgreed}
             setHasViewed={this.setHasViewed}
-            setIsInteractive={this.setIsInteractive} userdata = {this.state.userdata}/>;
+            setIsInteractive={this.setIsInteractive} 
+            userdata = {this.state.userdata}/>;
 
       case pages['CompletePage']:
         return <CompletePage goto={this.goto}/>;
