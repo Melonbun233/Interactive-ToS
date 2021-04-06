@@ -3,12 +3,17 @@ import React from 'react';
 import pages from '../pages';
 
 import useStyles from '../styles/style';
-import { Box, Typography, Button } from '@material-ui/core';
+import { Grid, Box, Typography, Button } from '@material-ui/core';
 
 
 const DetailedToSPage = (props) =>{
 
   const classes = useStyles();
+
+  const handleAgree = (value) =>{
+    props.setHasAgreed(value);
+    props.goto(pages['SectionSelectionPage']);
+  }
 
   return(
     <Box bgcolor='background.default' height='100vh' className={classes.content}>
@@ -22,13 +27,22 @@ const DetailedToSPage = (props) =>{
         <h4>2. ......</h4>
         <h4>3. ......</h4>
       </Box>
-      <Button 
-        variant='contained'
-        color='primary'
-        className={classes.button}
-        onClick={() => props.goto(pages['SectionSelectionPage'])}>
-        Back to Section Selection Page
-      </Button>
+      <Grid>
+        <Button 
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={()=>{handleAgree(props.value)}}>
+          Agree
+        </Button>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={()=>{props.goto(pages['SectionSelectionPage'])}}>
+          DisAgree
+        </Button>
+      </Grid>
     </Box>
   );
 }

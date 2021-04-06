@@ -220,7 +220,9 @@ export default class App extends React.Component{
         return <CompletePage goto={this.goto}/>;
 
       case pages['DetailedToSPage']:
-        return <DetailedToSPage goto={this.goto} value={this.state.sectionIndex}/>
+        return <DetailedToSPage goto={this.goto} 
+        setHasAgreed={this.setHasAgreed}
+        value={this.state.sectionIndex}/>
 
       default:
         return <h1> Invalid Page Index</h1>
