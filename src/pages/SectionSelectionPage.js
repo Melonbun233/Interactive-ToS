@@ -9,6 +9,13 @@ import useStyles from '../styles/style';
 
 const SectionSelectionPage = (props) => {
   const classes = useStyles();
+  const {setStartTime, setHasViewed} = props;
+
+  const handleSectionSelected = (value) => {
+    setStartTime(value);
+    setHasViewed(value);
+    props.goto(pages['SectionPage'], value);
+  }
 
   return (
     <Box bgcolor='background.default' height='100vh' className={classes.content}>
@@ -30,7 +37,7 @@ const SectionSelectionPage = (props) => {
                 variant='contained'
                 color='primary'
                 className={classes.button}
-                onClick={() => props.goto(pages['SectionPage'], value)}>
+                onClick={() => handleSectionSelected(value - 1)}>
                 Section {value}
               </Button>
             </Grid>

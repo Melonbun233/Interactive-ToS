@@ -10,7 +10,7 @@ import UI_S1P1 from './PageUI/UI_S1P1';
 import UI_S1P2 from './PageUI/UI_S1P2';
 import UI_S1P3 from './PageUI/UI_S1P3';
 
-const DisplayAera = (props) => {
+const DisplayArea = (props) => {
   const [currPageIndex, setCurrPageIndex] = useState(0);
   const [currItemIndex, setCurrItemIndex] = useState(0);
   const [itemSelected, setItemSelected] = useState(false);
@@ -22,12 +22,15 @@ const DisplayAera = (props) => {
   const sectionData = data.sections[sectionIndex];
   const { name, introductions, pages} = sectionData;
   const pageData = pages[currPageIndex];
+
+  const {handleEndSection, updateFalseNum, updateTrueNum, setPageIndex, setHasSkipped} = props;
   
   let onCompleteNarration = () => {
+    setPageIndex(sectionIndex, currPageIndex);
+
     // check if this is the last page and exit if true
     if (currPageIndex == pages.length - 1) {
-      setShouldEndSection(true);
-      // TODO: callback here to end section
+      handleEndSection();
     }
 
     if (pageData.items[currItemIndex].violatingRules) {
@@ -49,6 +52,11 @@ const DisplayAera = (props) => {
     setIsIntroduction(false);
   }
 
+  let onSkipSection = () => {
+    setHasSkipped(sectionIndex);
+    handleEndSection();
+  }
+
   const UIMap = [
     // section 1
     [
@@ -64,8 +72,15 @@ const DisplayAera = (props) => {
 
   return (
     <Box className={classes.displayArea}> 
+      <Typography variant='body1'>Page: {currPageIndex + 1}/{pages.length}</Typography>
       <Box textAlign='end' width='90%'>
-        <Typography variant='body1'>Page: {currPageIndex + 1}/{pages.length}</Typography>
+        <Button
+         variant='contained'
+         color='secondary'
+         onClick={onSkipSection}
+        >
+          Skip this Section
+        </Button> 
       </Box>
       
 
@@ -82,10 +97,13 @@ const DisplayAera = (props) => {
           itemSelected,
           onCompleteNarration,
           onCancelItemSelected,
+          updateFalseNum,
+          updateTrueNum,
+          sectionIndex,
         }} />    
       } 
     </Box>
   )
 }
 
-export default DisplayAera;
+export default DisplayArea;

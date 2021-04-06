@@ -10,11 +10,16 @@ const Narration = (props) => {
   const [confirmed, setConfirmed] = useState(false);
 
   const {pageData, currItemIndex, itemSelected, onCompleteNarration, 
-    onCancelItemSelected} = props.values;
+    onCancelItemSelected, updateTrueNum, updateFalseNum, sectionIndex} = props.values;
   const itemData = pageData.items[currItemIndex];
 
   let confirmButtonClicked = () => {
     setConfirmed(true);
+    if (itemData.violatingRules) {
+      updateTrueNum(sectionIndex);
+    } else {
+      updateFalseNum(sectionIndex);
+    }
   }
 
   let completeButtonClicked = () => {
