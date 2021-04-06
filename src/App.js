@@ -9,6 +9,7 @@ import SectionPage from './pages/SectionPage';
 import CompletePage from './pages/CompletePage';
 
 import pages from './pages';
+import DetailedToSPage from './pages/DetailedToSPage';
 
 export default class App extends React.Component{
   constructor(props) {
@@ -167,10 +168,6 @@ export default class App extends React.Component{
     )
   }
 
-  downclick=(e)=>{
-    e.stopPropagation();
-  }
-
   componentDidMount() {
     // prevent users from refreshing and back when they are testing
     window.addEventListener('beforeunload', this.beforeunload.bind(this));
@@ -221,6 +218,9 @@ export default class App extends React.Component{
 
       case pages['CompletePage']:
         return <CompletePage goto={this.goto}/>;
+
+      case pages['DetailedToSPage']:
+        return <DetailedToSPage goto={this.goto} value={this.state.sectionIndex}/>
 
       default:
         return <h1> Invalid Page Index</h1>

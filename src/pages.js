@@ -3,7 +3,7 @@ const pages = {
   SectionSelectionPage: 1,
   SectionPage: 2,
   CompletePage: 3,
-  DownloadPage: 4,
+  DetailedToSPage: 4,
 };
 
 export default pages;

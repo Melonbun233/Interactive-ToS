@@ -19,7 +19,7 @@ const SectionPage = (props) => {
 
   const handleEndSection = () => {
     setEndTime(sectionIndex);
-    goto(pages.SectionSelectionPage);
+    goto(pages.DetailedToSPage, props.value);
   }
 
   return (
