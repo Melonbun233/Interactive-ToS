@@ -23,13 +23,13 @@ const UI_S2P1 = (props) => {
       > 
         <Post 
           value={{
-            avatar: 'JJ',
-            username: 'Johns J',
-            date: '2021/4/10',
-            content: 'Just delivered a meal with 0 tip! Here\'s addr: 1902 West Street.',
+            avatar: 'J',
+            username: 'Joanne Mc',
+            date: '2020/6/10',
+            content: 'Who needs wealth when you can make a woman laugh?',
             chatNum: '12',
-            likeNum: '8',
-            dislikeNum: '12',
+            likeNum: '45',
+            dislikeNum: '9',
           }}
         /> 
       </Button>
@@ -40,10 +40,10 @@ const UI_S2P1 = (props) => {
       > 
         <Post 
           value={{
-            avatar: 'AA',
-            username: 'Angel Austin',
-            date: '2021/3/29',
-            content: 'Hey guys, we\'re looking for UI ideas outside the EU, cheers!',
+            avatar: 'EJ',
+            username: 'Elbert Jensen',
+            date: '2020/5/30',
+            content: 'Found a wallet on the street. Name: Bernard Parker, ID: 335673890. Please contact me at 778-006-3159.',
             chatNum: '0',
             likeNum: '4',
             dislikeNum: '2',
@@ -57,13 +57,13 @@ const UI_S2P1 = (props) => {
       > 
         <Post 
           value={{
-            avatar: 'P',
-            username: 'Patrick05',
-            date: '2021/3/25',
-            content: 'How\'s crytocurrency now huh?',
-            chatNum: '10',
-            likeNum: '4',
-            dislikeNum: '0',
+            avatar: 'C',
+            username: 'Cecelia',
+            date: '2020/5/25',
+            content: 'Nothing diminishes anxiety faster than action',
+            chatNum: '12',
+            likeNum: '124',
+            dislikeNum: '9',
           }}
         /> 
       </Button>
