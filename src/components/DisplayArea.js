@@ -78,7 +78,7 @@ const DisplayArea = (props) => {
   return (
     <Box className={classes.displayArea}> 
       <Typography variant='body1'>Page: {currPageIndex + 1}/{pages.length}</Typography>
-      <Box textAlign='end' width='90%'>
+      {/* <Box textAlign='end' width='90%'>
         <Button
          variant='contained'
          color='secondary'
@@ -86,7 +86,7 @@ const DisplayArea = (props) => {
         >
           Skip this Section
         </Button> 
-      </Box>
+      </Box> */}
       
 
       {UIMap[sectionIndex][currPageIndex]}

@@ -22,7 +22,7 @@ const LandingPage = (props) => {
             A new form that help people better read and understand ToS.
           </Typography>
           <Typography variant='body1'>
-            Please read and sign the consent form in the package before proceeding.
+          To proceed, please first read and sign the consent form found in the repository/package.
           </Typography>
         </div>
       </Box>
