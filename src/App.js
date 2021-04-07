@@ -45,7 +45,8 @@ export default class App extends React.Component{
           truePositiveNum: 0,
           falsePositiveNum: 0
         }
-      ]
+      ],
+      finishedSections: [false, false],
     }
 
     this.goto = this.goto.bind(this);
@@ -83,13 +84,16 @@ export default class App extends React.Component{
     const currentTime = new Date().getTime();
     const startTime = this.state.userdata[sectionIndex].startTime;
     const totalTime = (currentTime - startTime) / 1000;
+    const finishedSections = this.state.finishedSections;
+    finishedSections[sectionIndex] = true;
     console.log("section", sectionIndex)
     console.log("EndTime" , currentTime)
     console.log("TotalTime" , totalTime)
     this.setState({
       userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, endTime: currentTime, totalTime: totalTime} : item),
-    }
-    )
+      finishedSections,
+    });
+
   }
 
   // call this function when clicking Section (1,2,3...) page  
@@ -202,6 +206,7 @@ export default class App extends React.Component{
         return <SectionSelectionPage goto={this.goto} 
           setStartTime={this.setStartTime}
           setHasViewed={this.setHasViewed}
+          finishedSections={this.state.finishedSections}
         />;
         
       case pages['SectionPage']:

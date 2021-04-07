@@ -9,12 +9,22 @@ import useStyles from '../styles/style';
 
 const SectionSelectionPage = (props) => {
   const classes = useStyles();
-  const {setStartTime, setHasViewed} = props;
+  const {setStartTime, setHasViewed, finishedSections} = props;
 
   const handleSectionSelected = (value) => {
     setStartTime(value);
     setHasViewed(value);
     props.goto(pages['SectionPage'], value);
+  }
+
+  const allSectionFinished = () => {
+    for (let i = 0; i < finishedSections.length; i ++) {
+      if (!finishedSections[i]) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   return (
@@ -30,19 +40,23 @@ const SectionSelectionPage = (props) => {
       </Box>
       <Box width='70%' pt={5}>
         <Grid container spacing={3} direction='column' justify='center' alignItems='center'>
-          {[1, 2, 3].map((value) => (
+          {[1, 2].map((value) => (
             <Grid key={value} item>
               <Button 
                 fullWidth={true}
                 variant='contained'
                 color='primary'
                 className={classes.button}
-                onClick={() => handleSectionSelected(value - 1)}>
+                onClick={() => handleSectionSelected(value - 1)}
+                disabled={finishedSections[value-1]}  
+              >
                 Section {value}
               </Button>
             </Grid>
           ))}
-          <Grid item>
+          {
+            allSectionFinished() ? 
+            <Grid item>
               <Button 
                 fullWidth={true}
                 variant='contained'
@@ -51,7 +65,8 @@ const SectionSelectionPage = (props) => {
                 onClick={() => props.goto(pages['CompletePage'])}>
                 Complete Test
               </Button>
-            </Grid>
+            </Grid> : null
+          }
         </Grid>
 
       </Box>

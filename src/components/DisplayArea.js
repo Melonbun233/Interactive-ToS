@@ -15,7 +15,6 @@ const DisplayArea = (props) => {
   const [currItemIndex, setCurrItemIndex] = useState(0);
   const [itemSelected, setItemSelected] = useState(false);
   const [isIntroduction, setIsIntroduction] = useState(true);
-  const [shouldEndSection, setShouldEndSection] = useState(false);
   const classes = useStyles();
 
   const { sectionIndex } = props;

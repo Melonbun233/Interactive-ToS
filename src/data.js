@@ -20,15 +20,16 @@
 const data = {
   sections: [ // start of section arrays
     {
-      name: "Section1",
+      name: "Section1: Safety",
       introductions: [ // intro
         'Hello! Welcom to the section 1 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
+        'This section is dedicated to the safety rules that users should all agree to before they use the software. Our purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely.',
         'Recently, a lot of officers has reported many users of our product posted inappropriate content. You will be acting as a detector who is trying to find the evidences that users violating the rules with my help.',
         'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules".',
       ], 
       pages: [ // start of pages arrays
         {
-          description: "Our company's purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely. Please find the evidence that the user violated this rule.",
+          description: "Healthy conversation is only possible when people feel safe from abuse and don’t resort to using violent language. For this reason, we have a policy against threatening violence on Twitter. We define violent threats as statements of an intent to kill or inflict serious physical harm on a specific person or group of people. \n Please find the evidence that the user violated this rule.",
           items: [ // start of items array
             {
               narration: "Hmmm... This post seems to be the normal feelings under covid restrictions.",
@@ -53,7 +54,7 @@ const data = {
           ],
         },
         {
-          description: "There is no place here for violent organizations, including terrorist organizations, violent extremist groups, or individuals who affiliate with and promote their illicit activities. The violence that these groups engage in and/or promote jeopardizes the physical safety and well-being of those targeted. Please find the evidence that the user violated this rule.",
+          description: "There is no place here for violent organizations, including terrorist organizations, violent extremist groups, or individuals who affiliate with and promote their illicit activities. The violence that these groups engage in and/or promote jeopardizes the physical safety and well-being of those targeted. \n Please find the evidence that the user violated this rule.",
           items: [ // start of items array
             {
               narration: "This post seems to be posted by a terrorism organization, does it violate the rule?",
@@ -80,7 +81,7 @@ const data = {
           ],
         },
         {
-          description: "We have zero tolerance towards any material that features or promotes child sexual exploitation, one of the most serious violations of the rules. This may include media, text, illustrated, or computer-generated images. Regardless of the intent, viewing, sharing, or linking to child sexual exploitation material contributes to the re-victimization of the depicted children. Please find the evidence that the user violated this rule.",
+          description: "We have zero tolerance towards any material that features or promotes child sexual exploitation, one of the most serious violations of the rules. This may include media, text, illustrated, or computer-generated images. Regardless of the intent, viewing, sharing, or linking to child sexual exploitation material contributes to the re-victimization of the depicted children. \n Please find the evidence that the user violated this rule.",
           items: [  // start of items array
             {
               narration: "This post shouldn't be allowed! We have a zero-tolerance child sexual exploitation policy here, and this post definitely violets the rule!",
@@ -108,8 +109,90 @@ const data = {
         },
       ], // end of pages array
     }, 
-    {},
-    {},
+    {
+      name: 'Section 2: Privacy',
+      introductions: [
+        'Hello! Welcom to the section 2 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
+        'Section 2 is dedicated for data privacy rules. We will go through what data we collect from you and how we use it. We will also give some senarios of other (fake) companies where you need to find the evidence that violates the rule.',
+        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules".',
+      ], // end of introductions array
+      pages: [
+        {
+          description: '',
+          items: [
+            {
+
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
+        {
+          description: '',
+          items: [
+            {
+
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
+        {
+          description: '',
+          items: [
+            {
+
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
+      ], // end of pages array
+    },
+    {
+      name: 'Section 3',
+      introductions: [
+
+      ], // end of introductions array
+      pages: [
+        {
+          description: '',
+          items: [
+            {
+              
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
+        {
+          description: '',
+          items: [
+            {
+
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
+        {
+          description: '',
+          items: [
+            {
+
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
+      ], // end of pages array
+    },
     {},
   ], // end of sections array
 };
