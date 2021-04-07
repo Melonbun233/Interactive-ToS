@@ -1,7 +1,7 @@
 import { SignalCellularConnectedNoInternet2Bar } from '@material-ui/icons';
 import 'fontsource-roboto';
 import React from 'react';
-import pages from '../pages';
+import pageNames from '../pages';
 import data from '../data';
 
 import useStyles from '../styles/style';
@@ -16,9 +16,10 @@ const DetailedToSPage = (props) =>{
   const length = pages.length;
   console.log(pages);
   console.log(length);
+
   const handleAgree = (value) =>{
     props.setHasAgreed(value);
-    props.goto(pages['SectionSelectionPage']);
+    props.goto(pageNames['SectionSelectionPage']);
   }
 
   return(
@@ -26,18 +27,21 @@ const DetailedToSPage = (props) =>{
       <Box>
         <div className={classes.title}>
           <Typography variant='h4'>Section {props.value + 1}</Typography>
+          <Typography variant='h6'>Please read the following Traditional ToS that covers the same sections as the interactive ToS and select agree/disagree.</Typography>
         </div>
       </Box>
-      <Box >
+      <Box>
         {
           pages.map((items,idx)=>(
             <Box key={idx} margin={2}>
-              <Typography variant='body1'>{idx+1}:</Typography>
+              {
+                items.detailToS.length !== 0 ? 
+                <Typography variant='body1'>{idx+1}:</Typography> : null
+              }
               {
                 items.detailToS.map((item,key)=>(
                   (item != null)? <Typography variant='body1' key={key}>{item}</ Typography>:<div></div>
-                )
-                )
+                ))
               }
             </Box>
           ))
@@ -53,10 +57,10 @@ const DetailedToSPage = (props) =>{
         </Button>
         <Button
           variant='contained'
-          color='primary'
+          color='secondary'
           className={classes.button}
-          onClick={()=>{props.goto(pages['SectionSelectionPage'])}}>
-          DisAgree
+          onClick={()=>{props.goto(pageNames['SectionSelectionPage'])}}>
+          Disagree
         </Button>
       </Grid>
     </Box>
