@@ -222,7 +222,7 @@ export default class App extends React.Component{
         />;
 
       case pages['CompletePage']:
-        return <CompletePage goto={this.goto}/>;
+        return <CompletePage goto={this.goto} userdata = {this.state.userdata}/>;
 
       case pages['DetailedToSPage']:
         return <DetailedToSPage goto={this.goto} 
