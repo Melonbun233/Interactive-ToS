@@ -113,37 +113,55 @@ const data = {
       name: 'Section 2: Privacy',
       introductions: [
         'Hello! Welcom to the section 2 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
-        'Section 2 is dedicated for data privacy rules. We will go through what data we collect from you and how we use it. We will also give some senarios of other (fake) companies where you need to find the evidence that violates the rule.',
-        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules". Some content may be modified to better illustrate the idea.',
+        'Section 2 is dedicated for data privacy rules. This section is dedicated to the safety rules that users should all agree to before they use the software. Our purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely.',
+        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from Twitter privacy policy: "https://help.twitter.com/en/rules-and-policies/twitter-rules". Some content may be modified to better illustrate the idea.',
       ], // end of introductions array
       pages: [
         {
-          description: '',
+          description: 'Users may not publish or post other people\'s private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. \n Please find the evidence that the user violated this rule. ',
           items: [
             {
-
+              narration: 'It seems this user posted a private address, does it violate the rule?',
+              response: 'Yes, you are correct. Sharing someone\’s private information online without their permission, sometimes called doxxing, is a breach of their privacy and of the Rules. Sharing private information can pose serious safety and security risks for those affected and can lead to physical, emotional, and financial hardship.',
+              violatingRules: true,
+            },
+            {
+              narration: 'Looks like this user is an UI designer :) Does the user violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
+            },
+            {
+              narration: 'Does the user violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
             },
           ], // end of items array
           detailToS: [
-
+            "You may not publish or post other people's private information without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so.",
+            "Sharing someone’s private information online without their permission, sometimes called doxxing, is a breach of their privacy and of the Rules. Sharing private information can pose serious safety and security risks for those affected and can lead to physical, emotional, and financial hardship.",
+            "Under this policy, you can’t share the following types of private information, without the permission of the person who it belongs to:",
+            "home address or physical location information, including street addresses, GPS coordinates or other identifying information related to locations that are considered private; \n identity documents, including government-issued IDs and social security or other national identity numbers – note: we may make limited exceptions in regions where this information is not considered to be private; \n contact information, including non-public personal phone numbers or email addresses; \n financial account information, including bank account and credit card details; and \n other private information, including biometric data or medical records.",
+            "The following behaviors are also not permitted: ",
+            "threatening to publicly expose someone’s private information; \n sharing information that would enable individuals to hack or gain access to someone’s private information without their consent,e.g., sharing sign-in credentials for online banking services; \n asking for or offering a bounty or financial reward in exchange for posting someone’s private information; \n asking for a bounty or financial reward in exchange for not posting someone’s private information, sometimes referred to as blackmail.",
           ], // end of detail ToS
         },
         {
-          description: '',
+          description: 'Users may not publish or post other people\'s private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. \n Please find the evidence that the user violated this rule. ',
           items: [
             {
-
+              narration: 'Emmm, not sure if this is correct, but does this post violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
             },
-          ], // end of items array
-          detailToS: [
-
-          ], // end of detail ToS
-        },
-        {
-          description: '',
-          items: [
             {
-
+              narration: 'Looks like this user is helper others, does this post violate the rule?',
+              response: 'Yes, you are right. Although the user is helping others, he/she still needs to follow the rule. Sharing someone\’s private information online without their permission, sometimes called doxxing, is a breach of their privacy and of the Rules.',
+              violatingRules: true,
+            },
+            {
+              narration: 'Just do it!',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
             },
           ], // end of items array
           detailToS: [
@@ -152,48 +170,48 @@ const data = {
         },
       ], // end of pages array
     },
-    {
-      name: 'Section 3',
-      introductions: [
+    // {
+    //   name: 'Section 3',
+    //   introductions: [
 
-      ], // end of introductions array
-      pages: [
-        {
-          description: '',
-          items: [
-            {
+    //   ], // end of introductions array
+    //   pages: [
+    //     {
+    //       description: '',
+    //       items: [
+    //         {
               
-            },
-          ], // end of items array
-          detailToS: [
+    //         },
+    //       ], // end of items array
+    //       detailToS: [
 
-          ], // end of detail ToS
-        },
-        {
-          description: '',
-          items: [
-            {
+    //       ], // end of detail ToS
+    //     },
+    //     {
+    //       description: '',
+    //       items: [
+    //         {
 
-            },
-          ], // end of items array
-          detailToS: [
+    //         },
+    //       ], // end of items array
+    //       detailToS: [
 
-          ], // end of detail ToS
-        },
-        {
-          description: '',
-          items: [
-            {
+    //       ], // end of detail ToS
+    //     },
+    //     {
+    //       description: '',
+    //       items: [
+    //         {
 
-            },
-          ], // end of items array
-          detailToS: [
+    //         },
+    //       ], // end of items array
+    //       detailToS: [
 
-          ], // end of detail ToS
-        },
-      ], // end of pages array
-    },
-    {},
+    //       ], // end of detail ToS
+    //     },
+    //   ], // end of pages array
+    // },
+    // {},
   ], // end of sections array
 };
 
