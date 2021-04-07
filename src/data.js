@@ -168,10 +168,33 @@ const data = {
 
           ], // end of detail ToS
         },
+        {
+          description: 'Users may not publish or post other people\'s private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. \n Please find the evidence that the user violated this rule. ',
+          items: [
+            {
+              narration: 'This user is posting his phone number, does it violate the rule?',
+              response: 'This user is only posting his own information, and this does not violate the rule.',
+              violatingRules: false,
+            },
+            {
+              narration: 'Looks like this user is asking for a bounty on the person\'s information, does it voilate the rule?',
+              response: 'Yes, you are right. asking for or offering a bounty or financial reward in exchange for posting someone’s private information is violating the privacy rule',
+              violatingRules: true,
+            },
+            {
+              narration: 'Does the post violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
+            },
+          ], // end of items array
+          detailToS: [
+
+          ], // end of detail ToS
+        },
       ], // end of pages array
     },
     // {
-    //   name: 'Section 3',
+    //   name: 'Section 3: ',
     //   introductions: [
 
     //   ], // end of introductions array

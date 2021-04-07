@@ -3,8 +3,8 @@ import { useState } from 'react';
 import useStyles from '../../styles/style';
 import Post from '../Post';
 
-// ui section 1 page 1
-const UI_S1P2 = (props) => {
+// ui section 2 page 3
+const UI_S2P1 = (props) => {
   const [currItemIndex, setCurrItemIndex] = useState(-1);
 
   const classes = useStyles();
@@ -23,13 +23,13 @@ const UI_S1P2 = (props) => {
       > 
         <Post 
           value={{
-            avatar: 'IS',
-            username: 'ISIS',
-            date: '2021/3/28',
-            content: 'Join ISIS today for the better future!',
-            chatNum: '0',
-            likeNum: '12',
-            dislikeNum: '13',
+            avatar: 'JR',
+            username: 'Jack Rowe',
+            date: '2020/2/19',
+            content: 'Looking for a frontend developer! Contact me at 712-113-5673',
+            chatNum: '12',
+            likeNum: '45',
+            dislikeNum: '9',
           }}
         /> 
       </Button>
@@ -40,13 +40,13 @@ const UI_S1P2 = (props) => {
       > 
         <Post 
           value={{
-            avatar: 'A',
-            username: 'Angie',
-            date: '2021/3/25',
-            content: 'If 2020 was a person it would be my ex',
-            chatNum: '12',
-            likeNum: '296',
-            dislikeNum: '15',
+            avatar: 'FM',
+            username: 'Faye Mann',
+            date: '2020/2/15',
+            content: 'Looking for the name & phone number of this guy for 300$ <Photo of a person>',
+            chatNum: '2',
+            likeNum: '2',
+            dislikeNum: '9',
           }}
         /> 
       </Button>
@@ -57,13 +57,13 @@ const UI_S1P2 = (props) => {
       > 
         <Post 
           value={{
-            avatar: 'C',
-            username: 'Chapter233',
-            date: '2021/3/25',
-            content: 'hey, nice mask!',
-            chatNum: '5',
-            likeNum: '23',
-            dislikeNum: '83',
+            avatar: 'A',
+            username: 'Albert',
+            date: '2020/2/01',
+            content: 'If you are still looking for that one person who will change your life, take a look in the mirror.',
+            chatNum: '12',
+            likeNum: '124',
+            dislikeNum: '9',
           }}
         /> 
       </Button>
@@ -73,4 +73,4 @@ const UI_S1P2 = (props) => {
   
 }
 
-export default UI_S1P2;
+export default UI_S2P1;
