@@ -18,7 +18,7 @@ const UI_S1P1 = (props) => {
     <Box className={classes.content} width='60%'>
       <Button 
         onClick={() => onItemButtonClicked(0)}
-        disabled={isIntroduction || (itemSelected && currItemIndex != 0)}
+        disabled={isIntroduction || (itemSelected && currItemIndex !== 0)}
         fullWidth
       > 
         <Post 
@@ -35,7 +35,7 @@ const UI_S1P1 = (props) => {
       </Button>
       <Button 
         onClick={() => onItemButtonClicked(1)}
-        disabled={isIntroduction || (itemSelected && currItemIndex != 1)}
+        disabled={isIntroduction || (itemSelected && currItemIndex !== 1)}
         fullWidth
       > 
         <Post 
@@ -52,7 +52,7 @@ const UI_S1P1 = (props) => {
       </Button>
       <Button 
         onClick={() => onItemButtonClicked(2)}
-        disabled={isIntroduction || (itemSelected && currItemIndex != 2)}
+        disabled={isIntroduction || (itemSelected && currItemIndex !== 2)}
         fullWidth
       > 
         <Post 

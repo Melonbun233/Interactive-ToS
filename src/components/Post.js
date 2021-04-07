@@ -16,7 +16,7 @@ const Post = (props) => {
 
       <Box className={classes.columnFlexStart} width='100%'>
         <Box className={classes.rowFlexStart} padding={1}>
-          <Typography variant='h6'>{username} :{date}</Typography>
+          <Typography variant='h6'>{username} at {date}</Typography>
         </Box>
         <Box className={classes.columnFlexStart} pl={1} pb={1} textAlign='left'>
           <Typography variant='body1'>{content}</Typography>

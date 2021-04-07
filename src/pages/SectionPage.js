@@ -39,13 +39,13 @@ const SectionPage = (props) => {
           setHasSkipped={setHasSkipped}
         />
       </Box>
-      <Button 
+      {/* <Button 
         variant='contained'
         color='primary'
         className={classes.button}
         onClick={() => props.goto(pages['SectionSelectionPage'])}>
         Back
-      </Button>
+      </Button> */}
     </Box>
   );
 }
