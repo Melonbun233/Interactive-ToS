@@ -18,8 +18,10 @@ const LandingPage = (props) => {
           <Typography variant='h3'>CPEN 541 Project</Typography>
         </div>
         <div className={classes.subtitle}>
-          <Typography variant='subtitle2'>A new form that help people better</Typography>
-          <Typography variant='subtitle2'>read and understand ToS</Typography>
+          <Typography variant='subtitle2'>A new form that help people better read and understand ToS</Typography>
+          <Typography variant='body'>
+            Please read and sign the consent form in the package before proceeding.
+          </Typography>
         </div>
       </Box>
       <Button

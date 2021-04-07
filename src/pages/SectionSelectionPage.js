@@ -6,6 +6,7 @@ import { Box, Typography, Grid, Button } from '@material-ui/core';
 
 import pages from '../pages';
 import useStyles from '../styles/style';
+import data from '../data';
 
 const SectionSelectionPage = (props) => {
   const classes = useStyles();
@@ -35,7 +36,7 @@ const SectionSelectionPage = (props) => {
           <Typography variant='h3'>CPEN 541 Project</Typography>
         </div>
         <div className={classes.subtitle}>
-          <Typography variant='h5'>Please go through all Sections to finish the test</Typography>
+          <Typography variant='h5'>Please go through all sections to finish the test</Typography>
         </div>
       </Box>
       <Box width='70%' pt={5}>
@@ -50,7 +51,7 @@ const SectionSelectionPage = (props) => {
                 onClick={() => handleSectionSelected(value - 1)}
                 disabled={finishedSections[value-1]}  
               >
-                Section {value}
+                {data.sections[value-1].name} {finishedSections[value-1] ? 'Finished': ''}
               </Button>
             </Grid>
           ))}

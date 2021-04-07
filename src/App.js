@@ -56,7 +56,6 @@ export default class App extends React.Component{
     this.setHasAgreed = this.setHasAgreed.bind(this);
     this.setHasSkipped = this.setHasSkipped.bind(this);
     this.setPageIndex = this.setPageIndex.bind(this);
-    this.setIsInteractive = this.setIsInteractive.bind(this);
     this.updateTrueNum = this.updateTrueNum.bind(this);
     this.updateFalseNum = this.updateFalseNum.bind(this);
   }
@@ -67,45 +66,36 @@ export default class App extends React.Component{
   // call this function when clicking the Section (1,2,3...) button
   setStartTime = (sectionIndex)=>{
     console.log('setStartTime');
-    const userdata = [...this.state.userdata];
+    let userdata = this.state.userdata;
     const currentTime = new Date().getTime();
-    console.log("section", sectionIndex)
-    console.log("StartTime" , currentTime)
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, startTime: currentTime} : item),
-    }
-    )
+    userdata[sectionIndex].startTime = currentTime;
+    this.setState({userdata});
   }
 
   // call this function when clicking the 'Skip' or 'Finish' button
   setEndTime=(sectionIndex)=>{
     console.log('setEndTime');
-    const userdata = [...this.state.userdata];
+    let userdata = this.state.userdata;
     const currentTime = new Date().getTime();
-    const startTime = this.state.userdata[sectionIndex].startTime;
+    const startTime = userdata[sectionIndex].startTime;
     const totalTime = (currentTime - startTime) / 1000;
+
     const finishedSections = this.state.finishedSections;
     finishedSections[sectionIndex] = true;
-    console.log("section", sectionIndex)
-    console.log("EndTime" , currentTime)
-    console.log("TotalTime" , totalTime)
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, endTime: currentTime, totalTime: totalTime} : item),
-      finishedSections,
-    });
+
+    userdata[sectionIndex].endTime = currentTime;
+    userdata[sectionIndex].totalTime = totalTime;
+
+    this.setState({userdata});
 
   }
 
   // call this function when clicking Section (1,2,3...) page  
   setHasViewed=(sectionIndex)=>{
     console.log('setHasViewed');
-    const userdata = [...this.state.userdata];
-    console.log("section", sectionIndex)
-    console.log("hasViewed", this.state.userdata[sectionIndex].hasViewed)
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, hasViewed: true} : item),
-    }
-    )
+    let userdata = this.state.userdata;
+    userdata[sectionIndex].hasViewed = true;
+    this.setState({userdata});
   }
 
   setHasSkipped=(sectionIndex)=> {
@@ -118,58 +108,35 @@ export default class App extends React.Component{
   // call this function in the ToS page when clicking 'Agree'
   setHasAgreed=(sectionIndex)=>{
     console.log('setHasAgreed');
-    const userdata = [...this.state.userdata];
+    let userdata = this.state.userdata;
+    userdata[sectionIndex].hasAgreed = true;
 
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, hasAgreed: true} : item),
-    }
-    )
+    this.setState({userdata});
   }
 
   // call this function when clicking the 'Skip' or 'Finish' button, taking current pageIndex as parameter 
   setPageIndex=(sectionIndex, pageIndex)=>{
     console.log('setPageIndex');
-    const userdata = [...this.state.userdata];
+    let userdata = this.state.userdata;
+    userdata[sectionIndex].lastPageIndex = pageIndex;
 
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, lastPageIndex: pageIndex} : item),
-    }
-    )
-  }
-
-  // not decided yet
-  setIsInteractive=(sectionIndex)=>{
-    console.log('setIsInteractive');
-    const userdata = [...this.state.userdata];
-
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, isInteractive: true} : item),
-    }
-    )
+    this.setState({userdata});
   }
 
   // call this function when choosing correct answer
   updateTrueNum=(sectionIndex)=>{
     console.log('updateTrueNum');
-    const userdata = [...this.state.userdata];
-    const truePositiveNum = this.state.userdata[sectionIndex].truePositiveNum;
-    console.log("section", sectionIndex)
-    console.log("truePositiveNum", truePositiveNum)
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, truePositiveNum: truePositiveNum + 1} : item),
-    }
-    )
+    let userdata = this.state.userdata;
+    userdata[sectionIndex].truePositiveNum ++;
+    this.setState({userdata});
   }
 
   // call this function when choosing wrong answer
   updateFalseNum=(sectionIndex)=>{
     console.log('updateFalseNum');
-    const userdata = [...this.state.userdata];
-    const falsePositiveNum = this.state.userdata[sectionIndex].falsePositiveNum;
-    this.setState({
-      userdata: userdata.map((item,idx) => idx === sectionIndex? {...item, falsePositiveNum: falsePositiveNum + 1} : item),
-    }
-    )
+    let userdata = this.state.userdata;
+    userdata[sectionIndex].falsePositiveNum ++;
+    this.setState({userdata});
   }
 
   componentDidMount() {
@@ -210,15 +177,15 @@ export default class App extends React.Component{
         />;
         
       case pages['SectionPage']:
-        return <SectionPage goto={this.goto} value={this.state.sectionIndex} 
-            updateFalseNum={this.updateFalseNum}
-            updateTrueNum={this.updateTrueNum} 
-            setEndTime={this.setEndTime}
-            setPageIndex={this.setPageIndex}
-            setHasAgreed={this.setHasAgreed}
-            setIsInteractive={this.setIsInteractive}
-            setHasSkipped={this.setHasSkipped}
-            userdata = {this.state.userdata}
+        return <SectionPage goto={this.goto} 
+          value={this.state.sectionIndex} 
+          updateFalseNum={this.updateFalseNum}
+          updateTrueNum={this.updateTrueNum} 
+          setEndTime={this.setEndTime}
+          setPageIndex={this.setPageIndex}
+          setHasAgreed={this.setHasAgreed}
+          setHasSkipped={this.setHasSkipped}
+          userdata = {this.state.userdata}
         />;
 
       case pages['CompletePage']:

@@ -28,7 +28,8 @@ const DisplayArea = (props) => {
     setPageIndex(sectionIndex, currPageIndex);
 
     // check if this is the last page and exit if true
-    if (currPageIndex == pages.length - 1) {
+    if (currPageIndex == pages.length - 1 && 
+      pageData.items[currItemIndex].violatingRules) {
       handleEndSection();
     }
 

@@ -25,7 +25,7 @@ const data = {
         'Hello! Welcom to the section 1 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
         'This section is dedicated to the safety rules that users should all agree to before they use the software. Our purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely.',
         'Recently, a lot of officers has reported many users of our product posted inappropriate content. You will be acting as a detector who is trying to find the evidences that users violating the rules with my help.',
-        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules".',
+        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules". Some content may be modified to better illustrate the idea.',
       ], 
       pages: [ // start of pages arrays
         {
@@ -114,7 +114,7 @@ const data = {
       introductions: [
         'Hello! Welcom to the section 2 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
         'Section 2 is dedicated for data privacy rules. We will go through what data we collect from you and how we use it. We will also give some senarios of other (fake) companies where you need to find the evidence that violates the rule.',
-        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules".',
+        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from The Twitter Rules: "https://help.twitter.com/en/rules-and-policies/twitter-rules". Some content may be modified to better illustrate the idea.',
       ], // end of introductions array
       pages: [
         {

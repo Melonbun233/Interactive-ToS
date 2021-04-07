@@ -1,7 +1,5 @@
 import React, { useState, } from 'react';
-import data from '../data.json';
-import { Box, Typography, Grid, Button } from '@material-ui/core';
-import pages from '../pages';
+import { Box, Typography, Button } from '@material-ui/core';
 import useStyles from '../styles/style';
 
 
