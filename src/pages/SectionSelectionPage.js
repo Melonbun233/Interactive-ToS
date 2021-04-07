@@ -41,7 +41,8 @@ const SectionSelectionPage = (props) => {
       </Box>
       <Box width='70%' pt={5}>
         <Grid container spacing={3} direction='column' justify='center' alignItems='center'>
-          {[1, 2].map((value) => (
+          {[1, 2, 3].map((value) => (
+            <Box width='30%' key={value}>
             <Grid key={value} item>
               <Button 
                 fullWidth={true}
@@ -54,9 +55,11 @@ const SectionSelectionPage = (props) => {
                 {data.sections[value-1].name} {finishedSections[value-1] ? 'Finished': ''}
               </Button>
             </Grid>
+            </Box>
           ))}
           {
             allSectionFinished() ? 
+            <Box width='30%'>
             <Grid item>
               <Button 
                 fullWidth={true}
@@ -66,7 +69,8 @@ const SectionSelectionPage = (props) => {
                 onClick={() => props.goto(pages['CompletePage'])}>
                 Complete Test
               </Button>
-            </Grid> : null
+            </Grid> 
+            </Box>: null
           }
         </Grid>
 

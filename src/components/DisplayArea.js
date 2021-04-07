@@ -12,6 +12,8 @@ import UI_S1P3 from './PageUI/UI_S1P3';
 import UI_S2P1 from './PageUI/UI_S2P1';
 import UI_S2P2 from './PageUI/UI_S2P2';
 import UI_S2P3 from './PageUI/UI_S2P3';
+import UI_S3P1 from './PageUI/UI_S3P1';
+import UI_S3P2 from './PageUI/UI_S3P2';
 
 const DisplayArea = (props) => {
   const [currPageIndex, setCurrPageIndex] = useState(0);
@@ -72,6 +74,10 @@ const DisplayArea = (props) => {
       <UI_S2P1 values= {{onItemSelected, isIntroduction, itemSelected}} />,
       <UI_S2P2 values= {{onItemSelected, isIntroduction, itemSelected}} />,
       <UI_S2P3 values= {{onItemSelected, isIntroduction, itemSelected}} />,
+    ],
+    [
+      <UI_S3P1 values= {{onItemSelected, isIntroduction, itemSelected}} />,
+      <UI_S3P2 values= {{onItemSelected, isIntroduction, itemSelected}} />,
     ],
   ];
 

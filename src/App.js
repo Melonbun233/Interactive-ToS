@@ -44,7 +44,20 @@ export default class App extends React.Component{
           isInteractive: false,
           truePositiveNum: 0,
           falsePositiveNum: 0
-        }
+        },
+        {
+          sectionIndex: 2,
+          hasViewed: false,
+          hasAgreed: false,
+          hasSkipped: false,
+          lastPageIndex: 0,
+          startTime: 0,
+          endTime: 0,
+          totalTime: 0,
+          isInteractive: false,
+          truePositiveNum: 0,
+          falsePositiveNum: 0
+        },
       ],
       finishedSections: [false, false],
     }

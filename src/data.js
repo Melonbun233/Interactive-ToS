@@ -113,7 +113,7 @@ const data = {
       name: 'Section 2: Privacy',
       introductions: [
         'Hello! Welcom to the section 2 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
-        'Section 2 is dedicated for data privacy rules. This section is dedicated to the safety rules that users should all agree to before they use the software. Our purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely.',
+        'This section is dedicated to the safety rules that users should all agree to before they use the software. Our purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely.',
         'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from Twitter privacy policy: "https://help.twitter.com/en/rules-and-policies/twitter-rules". Some content may be modified to better illustrate the idea.',
       ], // end of introductions array
       pages: [
@@ -193,47 +193,66 @@ const data = {
         },
       ], // end of pages array
     },
-    // {
-    //   name: 'Section 3: ',
-    //   introductions: [
-
-    //   ], // end of introductions array
-    //   pages: [
-    //     {
-    //       description: '',
-    //       items: [
-    //         {
-              
-    //         },
-    //       ], // end of items array
-    //       detailToS: [
-
-    //       ], // end of detail ToS
-    //     },
-    //     {
-    //       description: '',
-    //       items: [
-    //         {
-
-    //         },
-    //       ], // end of items array
-    //       detailToS: [
-
-    //       ], // end of detail ToS
-    //     },
-    //     {
-    //       description: '',
-    //       items: [
-    //         {
-
-    //         },
-    //       ], // end of items array
-    //       detailToS: [
-
-    //       ], // end of detail ToS
-    //     },
-    //   ], // end of pages array
-    // },
+    {
+      name: 'Section 3: Authenticity',
+      introductions: [
+        'Hello! Welcom to the section 3 of Interactive ToS test. I am your personal asistant, and I will provide you some important information and guild you through this test.',
+        'This section is dedicated to the authenticity rules including Platform manipulation and spam and Copyright that users should all agree to before they use the software. Our purpose is to serve the public conversation. Violence, harassment and other similar types of behavior discourage people from expressing themselves, and ultimately diminish the value of global public conversation. Our rules are to ensure all people can participate in the public conversation freely and safely.',
+        'I hope that in this way, you could better understand how we provide good user experience to everyone by applying those rules. The following section is adapted from Twitter privacy policy: "https://help.twitter.com/en/rules-and-policies/twitter-rules". Some content may be modified to better illustrate the idea.',
+      ], // end of introductions array
+      pages: [
+        {
+          description: 'Users may not deceptively promote synthetic or manipulated media that are likely to cause harm. In addition, we may label Tweets containing synthetic and manipulated media to help people understand their authenticity and to provide additional context. Please find evidence that corresponds to this rule.',
+          items: [
+            {
+              narration: 'This post seems ok, does it violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
+            },
+            {
+              narration: 'This post seems ok, does it violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
+            },
+            {
+              narration: 'This post seems to be posted by a fake account, does it violets the rule?',
+              response: 'Yes, you are right. You may not deceptively promote synthetic or manipulated media that are likely to cause harm. In addition, we may label Tweets containing synthetic and manipulated media to help people understand their authenticity and to provide additional context. Addtionally, this post also violates the Glorification of Violence policy in Section 1.',
+              violatingRules: true,
+            },
+          ], // end of items array
+          detailToS: [
+            "You should be able to find reliable information. That means understanding whether the content you see is real or fabricated and having the ability to find more context about what you see. Therefore, we may label posts that include media (videos, audio, and images) that have been deceptively altered or fabricated. In addition, you may not share deceptively altered media in ways that mislead or deceive people about the media's authenticity where threats to physical safety or other serious harm may result.",
+            "In order for content to be labeled or removed under this policy, we must have reason to believe that media, or the context in which media are presented, are significantly and deceptively altered or manipulated. Synthetic and manipulated media take many different forms and people can employ a wide range of technologies to produce these media. In assessing whether media have been significantly and deceptively altered or fabricated, some of the factors we consider include: whether the content has been substantially edited in a manner that fundamentally alters its composition, sequence, timing, or framing; any visual or auditory information (such as new video frames, overdubbed audio, or modified subtitles) that has been added or removed; and whether media depicting a real person have been fabricated or simulated",
+            "In order to determine if media have been significantly and deceptively altered or fabricated, we may use our own technology or receive reports through partnerships with third parties. In situations where we are unable to reliably determine if media have been altered or fabricated, we may not take action to label or remove them."
+          ], // end of detail ToS
+        },
+        {
+          description: 'We will respond to reports of alleged copyright infringement, such as allegations concerning the unauthorized use of a copyrighted image as a profile or header photo, allegations concerning the unauthorized use of a copyrighted video or image uploaded through our media hosting services, or Tweets containing links to allegedly infringing materials. Please find evidence that corresponds to this rule.',
+          items: [
+            {
+              narration: 'This post seems to be helpful, does it violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
+            },
+            {
+              narration: 'huhuh, but does it violate the rule?',
+              response: 'This post does not violate the rule.',
+              violatingRules: false,
+            },
+            {
+              narration: 'This user is distributing others drawings, does it violate the rule?',
+              response: 'Yes, you are right. We respond to copyright complaints submitted under the Digital Millennium Copyright Act (“DMCA”). Section 512 of the DMCA outlines the statutory requirements necessary for formally reporting copyright infringement, as well as providing instructions on how an affected party can appeal a removal by submitting a compliant counter-notice.',
+              violatingRules: true,
+            },
+          ], // end of items array
+          detailToS: [
+            "We respond to copyright complaints submitted under the Digital Millennium Copyright Act (“DMCA”). Section 512 of the DMCA outlines the statutory requirements necessary for formally reporting copyright infringement, as well as providing instructions on how an affected party can appeal a removal by submitting a compliant counter-notice.",
+            "We will respond to reports of alleged copyright infringement, such as allegations concerning the unauthorized use of a copyrighted image as a profile or header photo, allegations concerning the unauthorized use of a copyrighted video or image uploaded through our media hosting services, or Tweets containing links to allegedly infringing materials. Note that not all unauthorized uses of copyrighted materials are infringements (see our fair use article for more information).",
+            "If you are concerned about the use of your brand or entity’s name, please review Twitter’s trademark policy. If you are concerned about a parody, newsfeed, commentary, or fan account, please see the relevant policy here. These are generally not copyright issues.",
+          ], // end of detail ToS
+        },
+      ], // end of pages array
+    },
     // {},
   ], // end of sections array
 };
