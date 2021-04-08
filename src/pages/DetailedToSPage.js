@@ -19,6 +19,12 @@ const DetailedToSPage = (props) =>{
 
   const handleAgree = (value) =>{
     props.setHasAgreed(value);
+    props.setToSTime(value);
+    props.goto(pageNames['SectionSelectionPage']);
+  }
+
+  const handleDisagree = (value) =>{
+    props.setToSTime(value);
     props.goto(pageNames['SectionSelectionPage']);
   }
 
@@ -59,7 +65,7 @@ const DetailedToSPage = (props) =>{
           variant='contained'
           color='secondary'
           className={classes.button}
-          onClick={()=>{props.goto(pageNames['SectionSelectionPage'])}}>
+          onClick={()=>{handleDisagree(props.value)}}>
           Disagree
         </Button>
       </Grid>
