@@ -5,6 +5,10 @@ import data from '../data';
 import Narration from './Narration';
 import Introduction from './Introduction';
 
+import safetyImage from '../images/safety.jpg';
+import privacyImage from '../images/privacy.svg';
+import authenticityImage from '../images/authenticity.jpg';
+
 // all section displays
 import UI_S1P1 from './PageUI/UI_S1P1';
 import UI_S1P2 from './PageUI/UI_S1P2';
@@ -28,6 +32,7 @@ const DisplayArea = (props) => {
   const pageData = pages[currPageIndex];
 
   const {handleEndSection, updateFalseNum, updateTrueNum, setPageIndex, setHasSkipped} = props;
+  const introductionImages = [safetyImage, privacyImage, authenticityImage];
   
   let onCompleteNarration = () => {
     setPageIndex(sectionIndex, currPageIndex);
@@ -94,24 +99,26 @@ const DisplayArea = (props) => {
         </Button> 
       </Box> */}
       
-
-      {UIMap[sectionIndex][currPageIndex]}
-
       {isIntroduction ? 
         <Introduction values={{
           onIntroductionEnded,
-          introductions
-        }} /> :
-        <Narration values={{
-          pageData,
-          currItemIndex,
-          itemSelected,
-          onCompleteNarration,
-          onCancelItemSelected,
-          updateFalseNum,
-          updateTrueNum,
-          sectionIndex,
-        }} />    
+          introductions,
+          image: introductionImages[sectionIndex]
+        }} /> : 
+        <Box className={classes.displayArea}>
+          <Narration values={{
+              pageData,
+              currItemIndex,
+              itemSelected,
+              onCompleteNarration,
+              onCancelItemSelected,
+              updateFalseNum,
+              updateTrueNum,
+              sectionIndex,
+            }} 
+            />    
+            {UIMap[sectionIndex][currPageIndex]}
+        </Box>
       } 
     </Box>
   )

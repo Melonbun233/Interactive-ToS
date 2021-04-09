@@ -31,11 +31,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   narrationArea: {
     width: '100%',
-    height: '200px',
+    height: '180px',
     display: 'flex',
     flexDirection: 'column',
     alignItems:'flex-start',
@@ -94,6 +94,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+  introImage: {
+    margin: theme.spacing(1),
+    height: '400px',
+  }
 }));
 
 export default useStyles;

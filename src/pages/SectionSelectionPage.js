@@ -36,7 +36,12 @@ const SectionSelectionPage = (props) => {
           <Typography variant='h3'>CPEN 541 Project</Typography>
         </div>
         <div className={classes.subtitle}>
-          <Typography variant='h5'>Please go through all sections to finish the test</Typography>
+          <Typography variant='h5'>
+            Please go through all sections to finish the test
+          </Typography>
+          <Typography variant='h5'>
+            Note that once you select a section, there will NOT be a back button.
+          </Typography>
         </div>
       </Box>
       <Box width='70%' pt={5}>

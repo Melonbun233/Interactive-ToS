@@ -27,7 +27,7 @@ const Narration = (props) => {
 
 
   return (
-    <Box borderTop={2} className={classes.narrationArea}>
+    <Box borderTop={2} borderBottom={2} className={classes.narrationArea} margin={2}>
       {itemSelected ? 
         <Box padding={1} className={classes.narration}> 
           {confirmed ? 

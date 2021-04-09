@@ -62,7 +62,7 @@ export default class App extends React.Component{
           falsePositiveNum: 0
         },
       ],
-      finishedSections: [false, false],
+      finishedSections: [false, false, false],
     }
 
     this.goto = this.goto.bind(this);
