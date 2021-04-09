@@ -28,6 +28,7 @@ export default class App extends React.Component{
           startTime: 0,
           endTime: 0,
           totalTime: 0,
+          totalToSTime:0,
           isInteractive: false,
           truePositiveNum: 0,
           falsePositiveNum: 0
@@ -41,6 +42,7 @@ export default class App extends React.Component{
           startTime: 0,
           endTime: 0,
           totalTime: 0,
+          totalToSTime:0,
           isInteractive: false,
           truePositiveNum: 0,
           falsePositiveNum: 0
@@ -54,6 +56,7 @@ export default class App extends React.Component{
           startTime: 0,
           endTime: 0,
           totalTime: 0,
+          totalToSTime:0,
           isInteractive: false,
           truePositiveNum: 0,
           falsePositiveNum: 0
@@ -71,6 +74,7 @@ export default class App extends React.Component{
     this.setPageIndex = this.setPageIndex.bind(this);
     this.updateTrueNum = this.updateTrueNum.bind(this);
     this.updateFalseNum = this.updateFalseNum.bind(this);
+    this.setToSTime=this.setToSTime.bind(this);
   }
 
   // Callback functions for collecting userdata are claimed here
@@ -98,6 +102,21 @@ export default class App extends React.Component{
 
     userdata[sectionIndex].endTime = currentTime;
     userdata[sectionIndex].totalTime = totalTime;
+
+    this.setState({userdata});
+
+  }
+
+  //compute ToS time when Agree/Disagree
+  setToSTime=(sectionIndex)=>{
+    console.log('setToSTime');
+    let userdata = this.state.userdata;
+    const currentTime = new Date().getTime();
+    const ToSStartTime = userdata[sectionIndex].endTime;
+    const totalToSTime = (currentTime - ToSStartTime) / 1000;
+    console.log('currentTime',currentTime);
+    console.log('totalTime',totalToSTime);
+    userdata[sectionIndex].totalToSTime = totalToSTime;
 
     this.setState({userdata});
 
@@ -207,6 +226,7 @@ export default class App extends React.Component{
       case pages['DetailedToSPage']:
         return <DetailedToSPage goto={this.goto} 
         setHasAgreed={this.setHasAgreed}
+        setToSTime={this.setToSTime}
         value={this.state.sectionIndex}/>
 
       default:
