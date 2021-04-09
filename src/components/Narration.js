@@ -79,7 +79,7 @@ const Narration = (props) => {
                   onClick={onCancelItemSelected}
                   fullWidth
                 >
-                  I'd Like To Choose Another One
+                  I'd like to choose another one
                 </Button>
               </Box>
               
@@ -87,9 +87,10 @@ const Narration = (props) => {
           }
         </Box> :
 
-        <Box padding={1}> 
+        <Box padding={1} className={classes.columnFlexStart}> 
           <Typography variant='h6'>Description:</Typography>
           <Typography variant='body1'>{pageData.description}</Typography>
+          <Typography variant='h6'>Please find the evidence related to the rule.</Typography>
         </Box>
       }
     </Box>

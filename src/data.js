@@ -29,7 +29,7 @@ const data = {
       ], 
       pages: [ // start of pages arrays
         {
-          description: "Healthy conversation is only possible when people feel safe from abuse and don’t resort to using violent language. For this reason, we have a policy against threatening violence on Twitter. We define violent threats as statements of an intent to kill or inflict serious physical harm on a specific person or group of people. \n Please find the evidence that the user violated this rule.",
+          description: "Healthy conversation is only possible when people feel safe from abuse and don’t resort to using violent language. There's no room for VIOLENT THREATS of an intent to kill or inflict serious physical harm on others.",
           items: [ // start of items array
             {
               narration: "Hmmm... This post seems to be the normal feelings under covid restrictions.",
@@ -54,7 +54,7 @@ const data = {
           ],
         },
         {
-          description: "There is no place here for violent organizations, including terrorist organizations, violent extremist groups, or individuals who affiliate with and promote their illicit activities. The violence that these groups engage in and/or promote jeopardizes the physical safety and well-being of those targeted. \n Please find the evidence that the user violated this rule.",
+          description: "There is no place here for VIOLENT organizations, including TERRORIST organizations, VIOLENT EXTREMIST groups, or individuals who affiliate with and promote their ILLICIT activities. The violence that these groups engage in and/or promote jeopardizes the physical safety and well-being of those targeted.",
           items: [ // start of items array
             {
               narration: "This post seems to be posted by a terrorism organization, does it violate the rule?",
@@ -81,7 +81,7 @@ const data = {
           ],
         },
         {
-          description: "We have zero tolerance towards any material that features or promotes child sexual exploitation, one of the most serious violations of the rules. This may include media, text, illustrated, or computer-generated images. Regardless of the intent, viewing, sharing, or linking to child sexual exploitation material contributes to the re-victimization of the depicted children. \n Please find the evidence that the user violated this rule.",
+          description: "We have zero tolerance towards any material that features or promotes CHILD SEXUAL EXPLOITATION, one of the most serious violations of the rules. This may include media, text, illustrated, or computer-generated images. Regardless of the intent, viewing, sharing, or linking to child sexual exploitation material contributes to the re-victimization of the depicted children.",
           items: [  // start of items array
             {
               narration: "This post shouldn't be allowed! We have a zero-tolerance child sexual exploitation policy here, and this post definitely violets the rule!",
@@ -118,7 +118,7 @@ const data = {
       ], // end of introductions array
       pages: [
         {
-          description: 'Users may not publish or post other people\'s private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. \n Please find the evidence that the user violated this rule. ',
+          description: 'Users may not publish or post other people\'s PRIVATE information (such as home phone number and address) without their express authorization and permission. We also PROHIBIT THREATENING to expose private information or INCENTIVIZIN others to do so.',
           items: [
             {
               narration: 'It seems this user posted a private address, does it violate the rule?',
@@ -146,7 +146,7 @@ const data = {
           ], // end of detail ToS
         },
         {
-          description: 'Users may not publish or post other people\'s private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. \n Please find the evidence that the user violated this rule. ',
+          description: 'Users may not publish or post other people\'s PRIVATE information (such as home phone number and address) without their express authorization and permission. We also PROHIBIT THREATENING to expose private information or INCENTIVIZIN others to do so.',
           items: [
             {
               narration: 'Emmm, not sure if this is correct, but does this post violate the rule?',
@@ -169,7 +169,7 @@ const data = {
           ], // end of detail ToS
         },
         {
-          description: 'Users may not publish or post other people\'s private information (such as home phone number and address) without their express authorization and permission. We also prohibit threatening to expose private information or incentivizing others to do so. \n Please find the evidence that the user violated this rule. ',
+          description: 'Users may not publish or post other people\'s PRIVATE information (such as home phone number and address) without their express authorization and permission. We also PROHIBIT THREATENING to expose private information or INCENTIVIZIN others to do so.',
           items: [
             {
               narration: 'This user is posting his phone number, does it violate the rule?',
@@ -202,7 +202,7 @@ const data = {
       ], // end of introductions array
       pages: [
         {
-          description: 'Users may not deceptively promote synthetic or manipulated media that are likely to cause harm. In addition, we may label Tweets containing synthetic and manipulated media to help people understand their authenticity and to provide additional context. Please find evidence that corresponds to this rule.',
+          description: 'Users may NOT deceptively promote synthetic or manipulated media that are likely to cause harm. In addition, we may label Tweets containing synthetic and manipulated media to help people understand their authenticity and to provide additional context.',
           items: [
             {
               narration: 'This post seems ok, does it violate the rule?',
@@ -227,7 +227,7 @@ const data = {
           ], // end of detail ToS
         },
         {
-          description: 'We will respond to reports of alleged copyright infringement, such as allegations concerning the unauthorized use of a copyrighted image as a profile or header photo, allegations concerning the unauthorized use of a copyrighted video or image uploaded through our media hosting services, or Tweets containing links to allegedly infringing materials. Please find evidence that corresponds to this rule.',
+          description: 'We will respond to reports of ALLEGED copyright infringement, such as allegations concerning the unauthorized use of a copyrighted image as a profile or header photo, allegations concerning the unauthorized use of a copyrighted video or image uploaded through our media hosting services, or Tweets containing links to allegedly infringing materials.',
           items: [
             {
               narration: 'This post seems to be helpful, does it violate the rule?',

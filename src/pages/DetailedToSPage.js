@@ -32,10 +32,15 @@ const DetailedToSPage = (props) =>{
       <Box>
         <div className={classes.title}>
           <Typography variant='h4'>Traditional ToS: Section {props.value + 1}</Typography>
-          <Typography variant='h6'>Please read the following Traditional ToS that covers the same sections as the interactive ToS and select agree/disagree.</Typography>
         </div>
       </Box>
       <Box>
+        <Typography variant='h5'>
+          Please read the following Traditional ToS CAREFULLY and select agree/disagree.
+        </Typography>
+        <Typography variant='h5'>
+          This is also part of the user study for COMPARISON of Traditional and Interactive ToS.
+        </Typography>
         {
           pages.map((items,idx)=>(
             <Box key={idx} margin={2}>
