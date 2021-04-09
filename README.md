@@ -14,9 +14,9 @@ The new form of the ToS will be based on multiple interactive games that reflect
 * Microsoft Word used to fill out the consent form and the questionnair
 
 ### Instructions
-1. Please read and sign the consent form found in the repository/package. 
+1. Please read and sign the "Consent Form.docx" found in the repository/package. 
 1. Open http://182.92.73.170:3000/ to start test. **Note at the end of the test, you will be asked to download a data file that contains your stats.**
-1. Complete the questionnaire found in the repository/package.  
+1. Complete the "Questionnaire.docx" found in the repository/package.  
 
 ### Submit Documents
 
