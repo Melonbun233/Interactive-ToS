@@ -9,7 +9,6 @@ import { Grid, Box, Typography, Button } from '@material-ui/core';
 
 
 const DetailedToSPage = (props) =>{
-
   const classes = useStyles();
   const sectionData = data.sections[props.value];
   const {pages} = sectionData;
@@ -26,7 +25,7 @@ const DetailedToSPage = (props) =>{
     <Box bgcolor='background.default'  className={classes.content}>
       <Box>
         <div className={classes.title}>
-          <Typography variant='h4'>Section {props.value + 1}</Typography>
+          <Typography variant='h4'>Traditional ToS: Section {props.value + 1}</Typography>
           <Typography variant='h6'>Please read the following Traditional ToS that covers the same sections as the interactive ToS and select agree/disagree.</Typography>
         </div>
       </Box>
