@@ -7,10 +7,17 @@ The new form of the ToS will be based on multiple interactive games that reflect
 
 ## User Study
 
-To proceed, please first read and sign the consent form found in the repository/package. Then, access [link] to start test.  
-After the test, you will be required to download a file that contains stats during the test. Please submit this file along with other ducuments at the end of the study.  
-Lastly, please complete the questionnaire found in the repository/package.  
+### What do you need before you start?
+* About 30 minutes of uninteruptted time slot
+* A PC or laptop that is connected to the Internet
+* A browser, we recommand use Chrome
+* Microsoft Word used to fill out the consent form and the questionnair
 
-## Submit Documents
+### Instructions
+1. Please read and sign the consent form found in the repository/package. 
+1. Open http://182.92.73.170:3000/ to start test. Note at the end of the test, you will be asked to download a data file that contains your stats.
+1. Complete the questionnaire found in the repository/package.  
 
-Please submit the consent form, userdata file downloaded from the website, and the questionnaire to [email].
+### Submit Documents
+
+Please send an email to henryz03@student.ubc.ca with the completed consent form, questionnaire, and userdata file downloaded from the website attached. Also, it would be nice if you can send the email with title CPEN541_Interactive_ToS.
