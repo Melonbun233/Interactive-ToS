@@ -5,7 +5,7 @@ The aim of this project is to improve the likelihood of reading and understandin
 The new form of the ToS will be based on multiple interactive games that reflect different sections of the user agreement. The games contain detective elements that require players to play as a judger and try to find correct evidence to support the claim of the user agreement violations.  
 
 
-## User Study
+## User Study - Available until April 15th Midnight PST
 
 ### What do you need before you start?
 * About 30 minutes of uninteruptted time slot
